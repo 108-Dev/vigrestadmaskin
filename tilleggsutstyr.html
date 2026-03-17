@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tilleggsutstyr til Rippa minigravere | Vigrestad Maskin AS</title>
+  <meta name="description" content="Skuffer, hurtigkobling, slaghammer, tømmerklype og hytte til Rippa gravemaskiner. Alt passer direkte — ingen tilpasning nødvendig.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       SHARED — Nordic Workshop Design System
+       ============================================ */
+
+    :root {
+      --charcoal: #1A1A1A;
+      --charcoal-90: rgba(26, 26, 26, 0.9);
+      --amber: #D4900A;
+      --amber-light: #E8A832;
+      --amber-glow: rgba(212, 144, 10, 0.15);
+      --rippa-blue: #003DA5;
+      --off-white: #F5F2ED;
+      --stone: #E8E4DE;
+      --stone-dark: #D4CFC7;
+      --forest: #4A6741;
+      --text-dark: #2D2D2D;
+      --text-warm: #6B6560;
+      --text-light: #9B9590;
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'Karla', sans-serif;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 3rem;
+      --space-xl: 5rem;
+      --space-2xl: 8rem;
+      --max-width: 1280px;
+      --nav-height: 80px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--off-white); overflow-x: hidden; }
+
+    /* ============================================
+       NAVIGATION (shared with homepage)
+       ============================================ */
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-height);
+      display: flex; align-items: center;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(212, 144, 10, 0.1);
+    }
+
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-width); margin: 0 auto; }
+
+    .nav__logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: white; }
+    .nav__logo-mark { width: 44px; height: 44px; background: #000; border: 2px solid var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--charcoal); transition: transform 0.3s ease; }
+    .nav__logo-icon { width: 28px; height: 28px; object-fit: contain; display: block; }
+
+    .nav__logo:hover .nav__logo-mark { transform: scale(1.05); }
+    .nav__logo-text { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.02em; line-height: 1.1; }
+    .nav__logo-text span { display: block; font-weight: 400; font-size: 0.65rem; color: var(--amber); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px; }
+
+    .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav__link { font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; letter-spacing: 0.02em; transition: color 0.3s ease; position: relative; }
+    .nav__link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--amber); transition: width 0.3s ease; }
+    .nav__link:hover { color: white; }
+    .nav__link:hover::after { width: 100%; }
+    .nav__link--active { color: white; }
+    .nav__link--active::after { width: 100%; }
+    .nav__cta { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--charcoal); background: var(--amber); text-decoration: none; padding: 0.6rem 1.25rem; border-radius: 6px; transition: background 0.3s ease, transform 0.2s ease; letter-spacing: 0.01em; }
+    .nav__cta:hover { background: var(--amber-light); transform: translateY(-1px); }
+    .nav__cta svg { width: 16px; height: 16px; }
+
+    .nav__toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav__toggle span { display: block; width: 24px; height: 2px; background: white; margin: 5px 0; transition: all 0.3s ease; }
+
+    /* ============================================
+       (page-hero removed — merged into accordion-hero)
+       ============================================ */
+
+    /* Reusable section components */
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-warm);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    /* ============================================
+       IMAGE ACCORDION HERO (combined page hero)
+       ============================================ */
+
+    .accordion-hero {
+      padding-top: calc(var(--nav-height) + clamp(2.5rem, 5vw, 4rem));
+      padding-bottom: clamp(3rem, 6vw, 5rem);
+      padding-left: clamp(1.5rem, 4vw, 3rem);
+      padding-right: clamp(1.5rem, 4vw, 3rem);
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .accordion-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(212, 144, 10, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .accordion-hero__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .accordion-hero__header {
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .accordion-hero__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.5rem;
+    }
+
+    .accordion-hero__breadcrumb a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .accordion-hero__breadcrumb a:hover {
+      color: var(--amber);
+    }
+
+    .accordion-hero__breadcrumb svg {
+      width: 14px;
+      height: 14px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .accordion-hero__label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .accordion-hero__label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .accordion-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .accordion-hero__subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    /* The accordion container */
+    .accordion-panels {
+      display: flex;
+      gap: 6px;
+      height: clamp(360px, 50vw, 520px);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* Individual panel */
+    .accordion-panel {
+      flex: 1;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      min-width: 0;
+    }
+
+    .accordion-panel.is-active {
+      flex: 5;
+    }
+
+    .accordion-panel__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .accordion-panel:hover .accordion-panel__img {
+      transform: scale(1.03);
+    }
+
+    /* Gradient overlays */
+    .accordion-panel__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.2) 40%, transparent 70%);
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .accordion-panel:not(.is-active) .accordion-panel__overlay {
+      background: linear-gradient(to top, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.5) 100%);
+    }
+
+    /* Label shown when collapsed — rotated vertically */
+    .accordion-panel__collapsed-label {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      transform-origin: center center;
+      white-space: nowrap;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .accordion-panel.is-active .accordion-panel__collapsed-label {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Content shown when expanded */
+    .accordion-panel__content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+    }
+
+    .accordion-panel.is-active .accordion-panel__content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .accordion-panel__number {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--amber);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .accordion-panel__title {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .accordion-panel__desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      max-width: 400px;
+    }
+
+    /* Mobile: stack vertically */
+    @media (max-width: 768px) {
+      .accordion-panels {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .accordion-panel {
+        height: 80px;
+        flex: none !important;
+        border-radius: 8px;
+        transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .accordion-panel.is-active {
+        height: 320px;
+        flex: none !important;
+      }
+
+      .accordion-panel__collapsed-label {
+        transform: translateX(-50%) rotate(0deg);
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+      }
+
+      .accordion-panel__content {
+        padding: 1.25rem;
+      }
+    }
+
+    /* ============================================
+       CATEGORY SECTIONS
+       ============================================ */
+
+    .category {
+      padding: clamp(3.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+    }
+
+    .category:nth-child(odd) {
+      background: var(--off-white);
+    }
+
+    .category:nth-child(even) {
+      background: #FDFBF7;
+    }
+
+    .category__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Category header: icon + text side by side */
+    .category__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .category__icon-wrap {
+      width: 56px;
+      height: 56px;
+      background: var(--amber-glow);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .category__icon-wrap svg {
+      width: 26px;
+      height: 26px;
+      color: var(--amber);
+    }
+
+    .category__header-text {
+      flex: 1;
+    }
+
+    .category__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .category__desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-warm);
+      line-height: 1.65;
+      max-width: 580px;
+    }
+
+    /* Accessory items grid */
+    .category__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--stone);
+      border: 1px solid var(--stone);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* Individual accessory card */
+    .acc-card {
+      background: #fff;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: background 0.25s ease;
+      position: relative;
+    }
+
+    .acc-card:hover {
+      background: #FDFBF7;
+    }
+
+    .acc-card__top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .acc-card__name {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .acc-card__price {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .acc-card__price--included {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--forest);
+      background: rgba(74, 103, 65, 0.1);
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .acc-card__price--inquiry {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--amber);
+      background: var(--amber-glow);
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Compatibility badges */
+    .acc-card__compat {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .acc-card__badge {
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 600;
+      color: var(--text-warm);
+      background: var(--stone);
+      padding: 2px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================
+       BOTTOM CTA
+       ============================================ */
+
+    .acc-cta {
+      background: var(--charcoal);
+      padding: clamp(3.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .acc-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(212, 144, 10, 0.06) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .acc-cta__inner {
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .acc-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .acc-cta__text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 6px;
+      transition: all 0.3s ease; letter-spacing: 0.01em; cursor: pointer; border: none;
+    }
+
+    .btn--primary { background: var(--amber); color: var(--charcoal); }
+    .btn--primary:hover { background: var(--amber-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 144, 10, 0.3); }
+
+    .btn svg { width: 18px; height: 18px; }
+
+    /* ============================================
+       FOOTER PRICING NOTE
+       ============================================ */
+
+    .pricing-note {
+      background: var(--stone);
+      padding: 1.25rem clamp(1.5rem, 4vw, 3rem);
+      border-top: 1px solid var(--stone-dark);
+    }
+
+    .pricing-note__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .pricing-note__icon {
+      width: 18px;
+      height: 18px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .pricing-note__text {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--text-warm);
+      line-height: 1.5;
+    }
+
+    /* ============================================
+       FOOTER (shared)
+       ============================================ */
+
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .footer__inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto; gap: 3rem; align-items: center; }
+    .footer__brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .footer__logo-mark { width: 40px; height: 40px; background: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 0.65rem; letter-spacing: 0.05em; color: var(--charcoal); flex-shrink: 0; }
+    .footer__brand-text { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.8); line-height: 1.2; }
+    .footer__brand-sub { font-family: var(--font-body); font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 2px; }
+    .footer__nav { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer__nav a { font-family: var(--font-body); font-size: 0.8rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s ease; }
+    .footer__nav a:hover { color: rgba(255,255,255,0.75); }
+    .footer__social { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer__social a { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: 0.8rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s ease; }
+    .footer__social a:hover { color: rgba(255,255,255,0.75); }
+    .footer__social svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .footer__rippa-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0, 61, 165, 0.1); border: 1px solid rgba(0, 61, 165, 0.18); border-radius: 4px; padding: 0.35rem 0.75rem; margin-top: 0.75rem; width: fit-content; }
+    .footer__rippa-badge svg { width: 14px; height: 14px; color: var(--rippa-blue); flex-shrink: 0; }
+    .footer__rippa-badge span { font-family: var(--font-display); font-size: 0.6rem; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase; }
+    .footer__bottom { max-width: var(--max-width); margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer__copy { font-family: var(--font-body); font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+    .footer__org { font-family: var(--font-body); font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .revealed {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__toggle { display: block; }
+
+      .category__header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer__inner { grid-template-columns: 1fr 1fr; }
+      .footer__brand { grid-column: span 2; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --nav-height: 64px; }
+
+      .category__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__inner { grid-template-columns: 1fr; }
+      .footer__brand { grid-column: span 1; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-mark"><img src="vigrestad_icon.svg" alt="VM" class="nav__logo-icon"></div>
+        <div class="nav__logo-text">
+          Vigrestad Maskin
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="maskiner.html" class="nav__link">Maskiner</a></li>
+        <li><a href="tilleggsutstyr.html" class="nav__link nav__link--active">Tilleggsutstyr</a></li>
+        <li><a href="om-oss.html" class="nav__link">Om oss</a></li>
+        <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
+        <li>
+          <a href="tel:+4798877800" class="nav__cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            988 77 800
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       HERO WITH ACCORDION
+       ======================================== -->
+  <section class="accordion-hero">
+    <div class="accordion-hero__inner">
+      <div class="accordion-hero__header">
+        <nav class="accordion-hero__breadcrumb">
+          <a href="index.html">Hjem</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span>Tilleggsutstyr</span>
+        </nav>
+        <p class="accordion-hero__label">Utstyr til Rippa-maskiner</p>
+        <h1 class="accordion-hero__title">Tilleggsutstyr</h1>
+        <p class="accordion-hero__subtitle">Riktig tilleggsutstyr gjør maskinen mer allsidig. Alt passer direkte på Rippa-maskinene — ingen tilpasning nødvendig.</p>
+      </div>
+
+      <div class="accordion-panels" id="accordionPanels">
+
+        <div class="accordion-panel is-active" data-index="0">
+          <img class="accordion-panel__img" src="images/R10-eco-pro-05.jpg" alt="Rippa R10 med tanneskuffe i arbeid" loading="lazy">
+          <div class="accordion-panel__overlay"></div>
+          <span class="accordion-panel__collapsed-label">Skuffer</span>
+          <div class="accordion-panel__content">
+            <p class="accordion-panel__number">01 / 05</p>
+            <h3 class="accordion-panel__title">Skuffer og redskap</h3>
+            <p class="accordion-panel__desc">Fra 20 cm tanneskuffe til 100 cm dobbel tilt. Velg bredden som passer jobben — alle monteres direkte uten tilpasning.</p>
+          </div>
+        </div>
+
+        <div class="accordion-panel" data-index="1">
+          <img class="accordion-panel__img" src="images/R10-eco-pro-12.jpg" alt="Hurtigkobling montert på Rippa" loading="lazy">
+          <div class="accordion-panel__overlay"></div>
+          <span class="accordion-panel__collapsed-label">Hurtigkobling</span>
+          <div class="accordion-panel__content">
+            <p class="accordion-panel__number">02 / 05</p>
+            <h3 class="accordion-panel__title">Hurtigkobling</h3>
+            <p class="accordion-panel__desc">Bytt redskap på sekunder uten å forlate førersetet. Mekanisk eller hydraulisk — fra 3 000 kr.</p>
+          </div>
+        </div>
+
+        <div class="accordion-panel" data-index="2">
+          <img class="accordion-panel__img" src="images/R10-eco-pro-20.jpg" alt="Slaghammer montert på Rippa minigraver" loading="lazy">
+          <div class="accordion-panel__overlay"></div>
+          <span class="accordion-panel__collapsed-label">Spesialredskap</span>
+          <div class="accordion-panel__content">
+            <p class="accordion-panel__number">03 / 05</p>
+            <h3 class="accordion-panel__title">Spesialredskap</h3>
+            <p class="accordion-panel__desc">Slaghammer, tømmerklype og hydraulisk skuffeklype. For de tyngre jobbene der du trenger mer enn en skuffe.</p>
+          </div>
+        </div>
+
+        <div class="accordion-panel" data-index="3">
+          <img class="accordion-panel__img" src="images/R10-eco-pro-30.jpg" alt="Rippa R10 med lukket hytte" loading="lazy">
+          <div class="accordion-panel__overlay"></div>
+          <span class="accordion-panel__collapsed-label">Hytte</span>
+          <div class="accordion-panel__content">
+            <p class="accordion-panel__number">04 / 05</p>
+            <h3 class="accordion-panel__title">Hytte og komfort</h3>
+            <p class="accordion-panel__desc">Åpen ROPS-bur er standard. Oppgrader til lukket hytte med varme og AC for helårsbruk i norsk klima.</p>
+          </div>
+        </div>
+
+        <div class="accordion-panel" data-index="4">
+          <img class="accordion-panel__img" src="images/R10-eco-pro-35.jpg" alt="Rippa minigraver med fullt utstyr" loading="lazy">
+          <div class="accordion-panel__overlay"></div>
+          <span class="accordion-panel__collapsed-label">Komplett</span>
+          <div class="accordion-panel__content">
+            <p class="accordion-panel__number">05 / 05</p>
+            <h3 class="accordion-panel__title">Komplett utstyrt</h3>
+            <p class="accordion-panel__desc">Kombiner utstyr etter behov. Ring Petter for en pakke tilpasset din jobb — han hjelper deg å sette sammen det rette oppsettet.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       KATEGORI 1: Skuffer og redskap
+       ======================================== -->
+  <section class="category section-reveal">
+    <div class="category__inner">
+      <div class="category__header">
+        <div class="category__icon-wrap">
+          <!-- Bucket/scoop icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20h20"/><path d="M5 20V8l7-4 7 4v12"/><path d="M9 20v-4h6v4"/>
+          </svg>
+        </div>
+        <div class="category__header-text">
+          <h2 class="category__title">Skuffer og redskap</h2>
+          <p class="category__desc">Tanneskuffer fra 20 til 80 cm, pusseskuffer, raker og ripper. Velg bredden som passer jobben — smalere for grøfter og kabler, bredere for planering og opprydding.</p>
+        </div>
+      </div>
+
+      <div class="category__grid">
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Tanneskuffe 20 cm</span>
+            <span class="acc-card__price--inquiry">Ring for pris</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Tanneskuffe 30 cm</span>
+            <span class="acc-card__price--inquiry">Ring for pris</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Tanneskuffe 40 cm</span>
+            <span class="acc-card__price--included">Standard</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Tanneskuffe 60 cm</span>
+            <span class="acc-card__price">3.500 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Tanneskuffe 80 cm</span>
+            <span class="acc-card__price">3.800 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Pusseskuffe fast 60 cm</span>
+            <span class="acc-card__price">2.900 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Pusseskuffe fast 80 cm</span>
+            <span class="acc-card__price">3.200 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Dobbel tilt skuffe 80 cm</span>
+            <span class="acc-card__price--inquiry">På forespørsel</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">R10+</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Dobbel tilt skuffe 100 cm</span>
+            <span class="acc-card__price--inquiry">På forespørsel</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">R13+</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Rake 40 cm</span>
+            <span class="acc-card__price--inquiry">Ring for pris</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Rake 60 cm</span>
+            <span class="acc-card__price">3.500 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Rake 80 cm</span>
+            <span class="acc-card__price">3.800 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Ripper</span>
+            <span class="acc-card__price">2.500 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       KATEGORI 2: Hurtigkobling
+       ======================================== -->
+  <section class="category section-reveal">
+    <div class="category__inner">
+      <div class="category__header">
+        <div class="category__icon-wrap">
+          <!-- Link/chain icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
+          </svg>
+        </div>
+        <div class="category__header-text">
+          <h2 class="category__title">Hurtigkobling</h2>
+          <p class="category__desc">Bytt redskap på sekunder uten å forlate førersetet. Mekanisk hurtigkobling fra 3 000 kr, hydraulisk med spak fra 5 499 kr.</p>
+        </div>
+      </div>
+
+      <div class="category__grid">
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Mekanisk hurtigkobling</span>
+            <span class="acc-card__price">3.000 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Hydraulisk hurtigkobling m/spak</span>
+            <span class="acc-card__price">5.499 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       KATEGORI 3: Spesialredskap
+       ======================================== -->
+  <section class="category section-reveal">
+    <div class="category__inner">
+      <div class="category__header">
+        <div class="category__icon-wrap">
+          <!-- Hammer icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <div class="category__header-text">
+          <h2 class="category__title">Spesialredskap</h2>
+          <p class="category__desc">Slaghammer for fjellknusing og betongarbeid. Tømmerklype for rydding og tømmerhåndtering. Hydraulisk skuffeklype for bedre grep og sortering.</p>
+        </div>
+      </div>
+
+      <div class="category__grid">
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Slaghammer</span>
+            <span class="acc-card__price">12.000 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">R10 PRO+ og opp</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Tømmerklype</span>
+            <span class="acc-card__price">5.500 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle modeller</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Hydraulisk skuffeklype</span>
+            <span class="acc-card__price">4.500 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">Alle R10-modeller</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       KATEGORI 4: Hytte og komfort
+       ======================================== -->
+  <section class="category section-reveal">
+    <div class="category__inner">
+      <div class="category__header">
+        <div class="category__icon-wrap">
+          <!-- Shield/shelter icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div class="category__header-text">
+          <h2 class="category__title">Hytte og komfort</h2>
+          <p class="category__desc">Åpen ROPS-bur er standard på R10-modellene. Oppgrader til lukket hytte for helårsbruk — med eller uten varme og AC.</p>
+        </div>
+      </div>
+
+      <div class="category__grid">
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Åpen hytte (ROPS-bur)</span>
+            <span class="acc-card__price--included">Standard</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">R10+</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Lukket hytte uten varme</span>
+            <span class="acc-card__price">~10.000 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">R10+</span></div>
+        </div>
+
+        <div class="acc-card">
+          <div class="acc-card__top">
+            <span class="acc-card__name">Lukket hytte med varme og AC</span>
+            <span class="acc-card__price">~18.000 kr</span>
+          </div>
+          <div class="acc-card__compat"><span class="acc-card__badge">R10+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PRICING NOTE
+       ======================================== -->
+  <div class="pricing-note">
+    <div class="pricing-note__inner">
+      <svg class="pricing-note__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+      <p class="pricing-note__text">Alle priser inkluderer mva. For utstyr merket «på forespørsel» eller «ring for pris» — ring 988 77 800 for pris og tilgjengelighet.</p>
+    </div>
+  </div>
+
+  <!-- ========================================
+       BOTTOM CTA
+       ======================================== -->
+  <section class="acc-cta">
+    <div class="acc-cta__inner section-reveal">
+      <h2 class="acc-cta__title">Usikker på hva du trenger?</h2>
+      <p class="acc-cta__text">Ring Petter — han hjelper deg med å finne riktig utstyr til din maskin og din jobb. Ingen forpliktelser.</p>
+      <a href="tel:+4798877800" class="btn btn--primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Ring oss: 988 77 800
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">
+        <div class="footer__logo-mark">VM</div>
+        <div>
+          <div class="footer__brand-text">Vigrestad Maskin AS</div>
+          <div class="footer__brand-sub">Norges eneste autoriserte Rippa-importør</div>
+        </div>
+      </a>
+
+      <nav class="footer__nav">
+        <a href="maskiner.html">Maskiner</a>
+        <a href="tilleggsutstyr.html">Tilleggsutstyr</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/vigrestadmaskin" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.youtube.com/@VIGRESTADMASKIN" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </a>
+        </div>
+        <div class="footer__rippa-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__copy">&copy; 2026 Vigrestad Maskin AS &middot; Ånestadvegen 23, 4360 Varhaug</span>
+      <span class="footer__org">Org.nr 934 145 038</span>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    // Scroll-triggered reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.section-reveal').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(32px)';
+      el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      revealObserver.observe(el);
+    });
+
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', function() {
+      this.classList.toggle('active');
+    });
+
+    // Image Accordion
+    const panels = document.querySelectorAll('.accordion-panel');
+    let autoRotateTimer;
+
+    function setActivePanel(index) {
+      panels.forEach(p => p.classList.remove('is-active'));
+      panels[index].classList.add('is-active');
+    }
+
+    panels.forEach((panel, i) => {
+      // Desktop: hover
+      panel.addEventListener('mouseenter', () => {
+        clearInterval(autoRotateTimer);
+        setActivePanel(i);
+      });
+
+      // Mobile: click
+      panel.addEventListener('click', () => {
+        clearInterval(autoRotateTimer);
+        setActivePanel(i);
+      });
+    });
+
+    // Auto-rotate every 4 seconds
+    let currentAccordion = 0;
+    autoRotateTimer = setInterval(() => {
+      currentAccordion = (currentAccordion + 1) % panels.length;
+      setActivePanel(currentAccordion);
+    }, 4000);
+
+    // Pause on hover over the container
+    const accordionContainer = document.getElementById('accordionPanels');
+    accordionContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoRotateTimer);
+    });
+    accordionContainer.addEventListener('mouseleave', () => {
+      autoRotateTimer = setInterval(() => {
+        currentAccordion = (currentAccordion + 1) % panels.length;
+        setActivePanel(currentAccordion);
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>

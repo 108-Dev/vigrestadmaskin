@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Vigrestad Maskin — Norges Rippa-importør | Varhaug, Rogaland</title>
+  <meta name="description" content="Vigrestad Maskin AS er Norges eneste autoriserte Rippa-importør med eksklusivt agentur. Innendørs lager, verksted og delelager på Varhaug.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       SHARED — Nordic Workshop Design System
+       ============================================ */
+
+    :root {
+      --charcoal: #1A1A1A;
+      --charcoal-90: rgba(26, 26, 26, 0.9);
+      --amber: #D4900A;
+      --amber-light: #E8A832;
+      --amber-glow: rgba(212, 144, 10, 0.15);
+      --rippa-blue: #003DA5;
+      --off-white: #F5F2ED;
+      --stone: #E8E4DE;
+      --stone-dark: #D4CFC7;
+      --forest: #4A6741;
+      --cream: #FDFBF7;
+      --text-dark: #2D2D2D;
+      --text-warm: #6B6560;
+      --text-light: #9B9590;
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'Karla', sans-serif;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 3rem;
+      --space-xl: 5rem;
+      --space-2xl: 8rem;
+      --max-width: 1280px;
+      --nav-height: 80px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--off-white); overflow-x: hidden; }
+
+    /* ============================================
+       NAVIGATION (shared)
+       ============================================ */
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-height);
+      display: flex; align-items: center;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(212, 144, 10, 0.1);
+    }
+
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; max-width: var(--max-width); margin: 0 auto;
+    }
+
+    .nav__logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: white;
+    }
+
+    .nav__logo-mark {
+      width: 44px; height: 44px;
+      background: #000;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 0.7rem; letter-spacing: 0.05em;
+      color: var(--charcoal);
+      transition: transform 0.3s ease;
+    }
+
+    .nav__logo-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav__logo:hover .nav__logo-mark { transform: scale(1.05); }
+
+    .nav__logo-text {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 1rem; letter-spacing: 0.02em; line-height: 1.1;
+    }
+
+    .nav__logo-text span {
+      display: block; font-weight: 400; font-size: 0.65rem;
+      color: var(--amber); letter-spacing: 0.15em;
+      text-transform: uppercase; margin-top: 2px;
+    }
+
+    .nav__links {
+      display: flex; align-items: center; gap: 2rem; list-style: none;
+    }
+
+    .nav__link {
+      font-family: var(--font-display); font-size: 0.85rem; font-weight: 500;
+      color: rgba(255, 255, 255, 0.75); text-decoration: none;
+      letter-spacing: 0.02em; transition: color 0.3s ease; position: relative;
+    }
+
+    .nav__link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--amber); transition: width 0.3s ease;
+    }
+
+    .nav__link:hover { color: white; }
+    .nav__link:hover::after { width: 100%; }
+
+    .nav__link--active { color: white; }
+    .nav__link--active::after { width: 100%; }
+
+    .nav__cta {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+      color: var(--charcoal); background: var(--amber);
+      text-decoration: none; padding: 0.6rem 1.25rem; border-radius: 6px;
+      transition: background 0.3s ease, transform 0.2s ease; letter-spacing: 0.01em;
+    }
+
+    .nav__cta:hover { background: var(--amber-light); transform: translateY(-1px); }
+    .nav__cta svg { width: 16px; height: 16px; }
+
+    .nav__toggle {
+      display: none; background: none; border: none; cursor: pointer; padding: 0.5rem;
+    }
+
+    .nav__toggle span {
+      display: block; width: 24px; height: 2px; background: white;
+      margin: 5px 0; transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       PAGE HERO — Compact with video
+       ============================================ */
+
+    .page-hero {
+      padding-top: calc(var(--nav-height) + 3rem);
+      padding-bottom: 0;
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .page-hero__breadcrumb {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .page-hero__breadcrumb a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .page-hero__breadcrumb a:hover { color: var(--amber); }
+    .page-hero__breadcrumb span { color: var(--amber); }
+
+    .page-hero__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      padding-bottom: 3rem;
+    }
+
+    .page-hero__accent {
+      width: 48px; height: 3px;
+      background: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .page-hero__title em {
+      font-style: normal;
+      color: var(--amber);
+    }
+
+    .page-hero__intro {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 480px;
+      align-self: end;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Video embed area */
+    .page-hero__video {
+      width: 100%;
+      background: #111;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero__video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #111 url('https://img.youtube.com/vi/a_hlOl2ge2I/maxresdefault.jpg') center/cover no-repeat;
+    }
+
+    .page-hero__video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ============================================
+       STORY — The Main Narrative
+       ============================================ */
+
+    .story {
+      background: var(--cream);
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      position: relative;
+    }
+
+    .story::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 1px; height: 80px;
+      background: linear-gradient(to bottom, var(--amber), transparent);
+    }
+
+    .story__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .story__layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .story__left {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+    }
+
+    .story__photo-stack {
+      position: relative;
+    }
+
+    .story__photo-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 4px;
+      filter: grayscale(15%) contrast(1.05);
+      transition: filter 0.6s ease;
+    }
+
+    .story__photo-main:hover {
+      filter: grayscale(0%) contrast(1.02);
+    }
+
+    /* Decorative elements around photo */
+    .story__photo-stack::before {
+      content: '';
+      position: absolute;
+      top: -12px; left: -12px;
+      width: 60px; height: 60px;
+      border-top: 3px solid var(--amber);
+      border-left: 3px solid var(--amber);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .story__photo-stack::after {
+      content: '';
+      position: absolute;
+      bottom: -12px; right: -12px;
+      width: 60px; height: 60px;
+      border-bottom: 3px solid var(--amber);
+      border-right: 3px solid var(--amber);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    /* Label overlaid on photo */
+    .story__photo-label {
+      position: absolute;
+      bottom: 1.5rem; left: 1.5rem;
+      background: var(--charcoal);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.6rem 1rem;
+      border-radius: 2px;
+    }
+
+    .story__photo-label::before {
+      content: '';
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: var(--amber);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .story__content {
+      padding-top: 1rem;
+    }
+
+    .story__label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1rem;
+    }
+
+    .story__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    .story__text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-warm);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .story__text:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .story__highlight {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--amber);
+      margin: 2.5rem 0;
+    }
+
+    /* ============================================
+       PETTER — The Personal Touch
+       ============================================ */
+
+    .petter {
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    /* Subtle noise overlay */
+    .petter__grain {
+      position: absolute; inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 256px 256px;
+      pointer-events: none;
+    }
+
+    .petter__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    .petter__layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .petter__content {}
+
+    .petter__label {
+      font-family: var(--font-display);
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1rem;
+    }
+
+    .petter__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    .petter__text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .petter__quote {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: white;
+      line-height: 1.6;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--amber);
+      margin: 2.5rem 0;
+    }
+
+    .petter__contact {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .petter__contact a {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .petter__contact a svg { width: 18px; height: 18px; }
+
+    .petter__contact-primary {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    .petter__contact-primary:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+    }
+
+    .petter__contact-secondary {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .petter__contact-secondary:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Video/image on the right */
+    .petter__media {
+      position: relative;
+    }
+
+    .petter__video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      background: #111 url('https://img.youtube.com/vi/Rfd9vKpNfU4/maxresdefault.jpg') center/cover no-repeat;
+    }
+
+    .petter__video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    .petter__video-caption {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      margin-top: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ============================================
+       FACTS — Company Data Strip
+       ============================================ */
+
+    .facts {
+      background: var(--stone);
+      padding: clamp(3rem, 5vw, 4rem) 0;
+    }
+
+    .facts__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .facts__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .facts__item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      position: relative;
+    }
+
+    .facts__item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 1px; height: 50%;
+      background: var(--stone-dark);
+    }
+
+    .facts__number {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .facts__number-suffix {
+      font-size: 0.5em;
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    .facts__desc {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-warm);
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+    }
+
+    /* ============================================
+       RIPPA — About the Manufacturer
+       ============================================ */
+
+    .rippa {
+      background: var(--cream);
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      position: relative;
+    }
+
+    .rippa__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .rippa__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .rippa__content {}
+
+    .rippa__label {
+      font-family: var(--font-display);
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1rem;
+    }
+
+    .rippa__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .rippa__text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-warm);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Certifications */
+    .rippa__certs {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .rippa__cert {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--stone);
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+    }
+
+    .rippa__cert svg {
+      width: 16px; height: 16px;
+      color: var(--rippa-blue);
+      flex-shrink: 0;
+    }
+
+    /* Rippa stats grid */
+    .rippa__stats {
+      background: var(--charcoal);
+      border-radius: 8px;
+      padding: clamp(2rem, 4vw, 3rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .rippa__stat {
+      text-align: center;
+    }
+
+    .rippa__stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .rippa__stat-number span {
+      color: var(--amber);
+    }
+
+    .rippa__stat-desc {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================
+       AUTHORITY BANNER — Official Importer
+       ============================================ */
+
+    .authority-banner {
+      background: var(--rippa-blue);
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .authority-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.06);
+      pointer-events: none;
+    }
+
+    .authority-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .authority-banner__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      display: flex;
+      align-items: center;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      position: relative;
+    }
+
+    .authority-banner__seal {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .authority-banner__seal-ring {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .authority-banner__seal-ring::before {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255,255,255,0.15);
+    }
+
+    .authority-banner__seal-ring svg {
+      width: 28px;
+      height: 28px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .authority-banner__seal-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.15;
+    }
+
+    .authority-banner__seal-text span {
+      font-family: var(--font-display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .authority-banner__content {
+      flex: 1;
+    }
+
+    .authority-banner__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .authority-banner__desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .authority-banner__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--rippa-blue);
+      background: white;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .authority-banner__cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .authority-banner__cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ============================================
+       COMPANY INFO — Details bar
+       ============================================ */
+
+    .company {
+      background: var(--off-white);
+      padding: clamp(3rem, 5vw, 4.5rem) 0;
+      border-top: 1px solid var(--stone);
+    }
+
+    .company__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .company__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .company__block {
+      padding: 2rem;
+      background: white;
+      border-radius: 6px;
+      border: 1px solid var(--stone);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .company__block:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .company__block-icon {
+      width: 44px; height: 44px;
+      background: var(--amber-glow);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .company__block-icon svg {
+      width: 22px; height: 22px;
+      color: var(--amber);
+    }
+
+    .company__block-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .company__block-text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-warm);
+      line-height: 1.6;
+    }
+
+    .company__block-text a {
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .company__block-text a:hover { color: var(--amber-light); }
+
+    /* ============================================
+       CONTACT CTA
+       ============================================ */
+
+    .contact-cta {
+      background: var(--charcoal);
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-cta__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .contact-cta__text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-cta__actions {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none;
+      padding: 0.8rem 1.75rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+    }
+
+    .btn svg { width: 18px; height: 18px; }
+
+    .btn--primary {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    .btn--primary:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+    }
+
+    .btn--ghost-light {
+      background: #000;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .btn--ghost-light:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-2px);
+    }
+
+    .contact-cta__card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 2.5rem;
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+
+    .contact-cta__detail {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+
+    .contact-cta__detail-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(212, 144, 10, 0.1);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .contact-cta__detail-icon svg {
+      width: 18px; height: 18px; color: var(--amber);
+    }
+
+    .contact-cta__detail-label {
+      font-family: var(--font-display);
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-cta__detail-value {
+      font-family: var(--font-body);
+      font-size: 0.95rem; color: white; line-height: 1.5;
+    }
+
+    .contact-cta__detail-value a {
+      color: white; text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-cta__detail-value a:hover { color: var(--amber); }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+
+    .footer {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 3rem 0 0;
+    }
+
+    .footer__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 2.5rem;
+    }
+
+    .footer__brand {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: white;
+    }
+
+    .footer__logo-mark {
+      width: 36px; height: 36px;
+      background: var(--amber); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 0.6rem; color: var(--charcoal);
+    }
+
+    .footer__brand-text {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 0.9rem; color: white;
+    }
+
+    .footer__brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 1px;
+    }
+
+    .footer__nav {
+      display: flex; gap: 2rem;
+    }
+
+    .footer__nav a {
+      font-family: var(--font-display);
+      font-size: 0.82rem; font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer__nav a:hover { color: white; }
+
+    .footer__social {
+      display: flex; gap: 1.25rem;
+    }
+
+    .footer__social a {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-display);
+      font-size: 0.78rem; font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer__social a:hover { color: var(--amber); }
+    .footer__social svg { width: 18px; height: 18px; }
+
+    /* Rippa partner badge */
+    .footer__rippa-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0, 61, 165, 0.1);
+      border: 1px solid rgba(0, 61, 165, 0.18);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-top: 0.75rem;
+      width: fit-content;
+    }
+
+    .footer__rippa-badge svg {
+      width: 14px; height: 14px;
+      color: var(--rippa-blue);
+      flex-shrink: 0;
+    }
+
+    .footer__rippa-badge span {
+      font-family: var(--font-display);
+      font-size: 0.6rem; font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.25rem clamp(1.5rem, 4vw, 3rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer__copy, .footer__org {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ============================================
+       SCROLL REVEAL
+       ============================================ */
+
+    .section-reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .section-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    @media (max-width: 1100px) {
+      .page-hero__header { gap: 3rem; }
+      .story__layout { gap: 3rem; }
+      .petter__layout { gap: 3rem; }
+    }
+
+    @media (max-width: 900px) {
+      .page-hero__header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .page-hero__intro { max-width: none; }
+
+      .story__layout {
+        grid-template-columns: 1fr;
+      }
+
+      .story__left {
+        position: static;
+        max-width: 500px;
+      }
+
+      .petter__layout {
+        grid-template-columns: 1fr;
+      }
+
+      .petter__media { order: -1; }
+
+      .rippa__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .rippa__stats { order: -1; }
+
+      .authority-banner__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .authority-banner__cta {
+        align-self: center;
+      }
+
+      .facts__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .facts__item:nth-child(2)::after { display: none; }
+
+      .company__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .contact-cta__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer__inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .nav__links { display: none; }
+      .nav__toggle { display: block; }
+    }
+
+    @media (max-width: 600px) {
+      .facts__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .facts__item::after { display: none; }
+
+      .rippa__stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        padding: 2rem;
+      }
+
+      .rippa__certs {
+        gap: 0.5rem;
+      }
+
+      .petter__contact {
+        flex-direction: column;
+      }
+
+      .contact-cta__actions {
+        flex-direction: column;
+      }
+
+      .btn { justify-content: center; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-mark"><img src="vigrestad_icon.svg" alt="VM" class="nav__logo-icon"></div>
+        <div class="nav__logo-text">
+          Vigrestad Maskin
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="maskiner.html" class="nav__link">Maskiner</a></li>
+        <li><a href="tilleggsutstyr.html" class="nav__link">Tilleggsutstyr</a></li>
+        <li><a href="om-oss.html" class="nav__link nav__link--active">Om oss</a></li>
+        <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
+        <li>
+          <a href="tel:+4798877800" class="nav__cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            988 77 800
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       PAGE HERO — Video + Title
+       ======================================== -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Hjem</a> &nbsp;/&nbsp; <span>Om oss</span>
+      </div>
+
+      <div class="page-hero__header">
+        <div>
+          <div class="page-hero__accent"></div>
+          <h1 class="page-hero__title">Ekte maskiner,<br><em>ekte service</em></h1>
+        </div>
+        <p class="page-hero__intro">
+          Norges eneste autoriserte Rippa-importør med eksklusivt agentur. Direkte kontakt med fabrikken, offisiell garanti, og en telefon som alltid blir besvart.
+        </p>
+      </div>
+    </div>
+
+    <div class="page-hero__video">
+      <div class="page-hero__video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/a_hlOl2ge2I?si=ODaNSU_zg_bfSy4t"
+          title="Vigrestad Maskin AS — Lager og verksted"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FACTS STRIP
+       ======================================== -->
+  <section class="facts section-reveal">
+    <div class="facts__inner">
+      <div class="facts__grid">
+        <div class="facts__item">
+          <div class="facts__number">1<span class="facts__number-suffix">.</span></div>
+          <div class="facts__desc">Eneste autoriserte Rippa-importør i Norge</div>
+        </div>
+        <div class="facts__item">
+          <div class="facts__number">2<span class="facts__number-suffix"> år</span></div>
+          <div class="facts__desc">Fabrikkgaranti / 1 000 timer på alle maskiner</div>
+        </div>
+        <div class="facts__item">
+          <div class="facts__number">100<span class="facts__number-suffix">%</span></div>
+          <div class="facts__desc">Innendørs lagring — tørt, rent, i topp stand</div>
+        </div>
+        <div class="facts__item">
+          <div class="facts__number">1<span class="facts__number-suffix"> tlf</span></div>
+          <div class="facts__desc">Ring Petter direkte — ingen sentralbord</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       STORY — Main Narrative
+       ======================================== -->
+  <section class="story">
+    <div class="story__inner">
+      <div class="story__layout section-reveal">
+
+        <div class="story__left">
+          <div class="story__photo-stack">
+            <img
+              src="images/R10-eco-pro-02.jpg"
+              alt="Rippa minigraver klar på innendørs lager hos Vigrestad Maskin, Varhaug"
+              class="story__photo-main"
+              loading="lazy"
+            >
+            <div class="story__photo-label">Varhaug, Rogaland</div>
+          </div>
+        </div>
+
+        <div class="story__content">
+          <p class="story__label">Vår historie</p>
+          <h2 class="story__title">En maskinforhandler som gjør ting enkelt</h2>
+
+          <p class="story__text">
+            Vigrestad Maskin AS holder til på Varhaug i Rogaland. Vi er Norges eneste autoriserte Rippa-importør med eksklusivt agentur — det betyr direkte kontakt med fabrikken, offisiell garanti og tilgang til originale deler.
+          </p>
+
+          <div class="story__highlight">
+            Vi tror på å gjøre ting enkelt og ærlig. Klare priser, god garanti, og en telefon som alltid blir besvart.
+          </div>
+
+          <p class="story__text">
+            Alle maskiner lagres innendørs i vårt lager på Varhaug. Når du henter eller mottar maskinen din, er den ren, tørr og klar til bruk. Vi har også delelager og verksted på stedet, slik at vi kan følge opp med service og vedlikehold over tid.
+          </p>
+
+          <p class="story__text">
+            Vi leverer over hele landet, med faste fraktpriser fra Rogaland til Tromsø. Ingen overraskelser, ingen skjulte kostnader. Du vet hva du betaler — før du bestiller.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PETTER — The Personal Touch
+       ======================================== -->
+  <section class="petter">
+    <div class="petter__grain"></div>
+    <div class="petter__inner">
+      <div class="petter__layout section-reveal">
+
+        <div class="petter__content">
+          <p class="petter__label">Mannen bak maskinen</p>
+          <h2 class="petter__title">Du handler med én person: Petter Ege</h2>
+
+          <p class="petter__text">
+            Har du spørsmål, ringer du Petter. Trenger du service, kommer du til verkstedet vårt. Skal maskinen leveres, ordner vi det — med faste priser og ingen overraskelser.
+          </p>
+
+          <div class="petter__quote">
+            Ingen sentralbord. Ingen ventetid. Ingen selgere som ikke kjenner maskinen. Bare en direkte linje til personen som importerer, sjekker og klargjør maskinen din.
+          </div>
+
+          <p class="petter__text">
+            Petter kjenner hver maskin som forlater lageret. Han svarer telefonen, han ordner frakten, han følger opp etter levering. Det er hele modellen — én person, full oversikt, ingen mellomledd.
+          </p>
+
+          <div class="petter__contact">
+            <a href="tel:+4798877800" class="petter__contact-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              Ring Petter: 988 77 800
+            </a>
+            <a href="mailto:ege68@msn.com" class="petter__contact-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              ege68@msn.com
+            </a>
+          </div>
+        </div>
+
+        <div class="petter__media">
+          <div class="petter__video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/Rfd9vKpNfU4?si=hZYroHE-6sxZp8aS"
+              title="Petter presenterer Rippa-modellene"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="petter__video-caption">Petter presenterer modellene med priser</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       RIPPA — About the Manufacturer
+       ======================================== -->
+  <section class="rippa section-reveal">
+    <div class="rippa__inner">
+      <div class="rippa__layout">
+
+        <div class="rippa__content">
+          <p class="rippa__label">Produsenten</p>
+          <h2 class="rippa__title">Om Rippa — kvalitet fra fabrikken</h2>
+
+          <p class="rippa__text">
+            Rippa (Shandong Rippa Machinery Group) er en av verdens største produsenter av kompakte gravemaskiner. Med over 13 års erfaring og eksport til mer enn 100 land, leverer Rippa maskiner med CE-merking, Euro 5, og motorer fra Kubota, Yanmar og Briggs & Stratton.
+          </p>
+
+          <p class="rippa__text">
+            Rippa er den eneste kompaktmaskinprodusenten i Kina med dyptgående samarbeid med Japans Kubota — noe som sikrer motorkvalitet og tilgang på deler over hele verden.
+          </p>
+
+          <div class="rippa__certs">
+            <div class="rippa__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              CE-merket
+            </div>
+            <div class="rippa__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Euro 5
+            </div>
+            <div class="rippa__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              EPA
+            </div>
+            <div class="rippa__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Stage V
+            </div>
+            <div class="rippa__cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+              Kubota-partner
+            </div>
+          </div>
+
+        </div>
+
+        <div class="rippa__stats">
+          <div class="rippa__stat">
+            <div class="rippa__stat-number">13<span>+</span></div>
+            <div class="rippa__stat-desc">År erfaring</div>
+          </div>
+          <div class="rippa__stat">
+            <div class="rippa__stat-number">100<span>+</span></div>
+            <div class="rippa__stat-desc">Land eksport</div>
+          </div>
+          <div class="rippa__stat">
+            <div class="rippa__stat-number">CE</div>
+            <div class="rippa__stat-desc">Sertifisert</div>
+          </div>
+          <div class="rippa__stat">
+            <div class="rippa__stat-number">Kubota</div>
+            <div class="rippa__stat-desc">Motorpartner</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       OFFICIAL IMPORTER — Authority Banner
+       ======================================== -->
+  <section class="authority-banner">
+    <div class="authority-banner__inner">
+
+      <div class="authority-banner__seal">
+        <div class="authority-banner__seal-ring">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="authority-banner__seal-text">
+          <span>Autorisert</span>
+          <span>Importør</span>
+          <span>Norge</span>
+        </div>
+      </div>
+
+      <div class="authority-banner__content">
+        <h2 class="authority-banner__title">Norges eneste autoriserte Rippa-forhandler</h2>
+        <p class="authority-banner__desc">
+          Vigrestad Maskin AS har eksklusivt agentur for Rippa i Norge — direkte tilgang til hele sortimentet, originale reservedeler, og fullstendig fabrikkgaranti. Skal du ha Rippa i Norge, er det oss du snakker med.
+        </p>
+      </div>
+
+      <a href="kontakt.html" class="authority-banner__cta">
+        <span>Ta kontakt</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       COMPANY INFO
+       ======================================== -->
+  <section class="company section-reveal">
+    <div class="company__inner">
+      <div class="company__grid">
+
+        <div class="company__block">
+          <div class="company__block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3 class="company__block-title">Besøksadresse</h3>
+          <p class="company__block-text">
+            Ånestadvegen 23<br>
+            4360 Varhaug, Rogaland<br><br>
+            Avtal gjerne besøk på forhånd, så sørger vi for at maskinen du vil se er klar.
+          </p>
+        </div>
+
+        <div class="company__block">
+          <div class="company__block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="company__block-title">Selskapsinfo</h3>
+          <p class="company__block-text">
+            Vigrestad Maskin AS<br>
+            Org.nr 934 145 038<br>
+            Næringskode: 46.630
+          </p>
+        </div>
+
+        <div class="company__block">
+          <div class="company__block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/>
+            </svg>
+          </div>
+          <h3 class="company__block-title">Følg oss</h3>
+          <p class="company__block-text">
+            <a href="https://www.facebook.com/vigrestadmaskin" target="_blank" rel="noopener">Facebook — Vigrestad Maskin</a><br>
+            <a href="https://www.youtube.com/@VIGRESTADMASKIN" target="_blank" rel="noopener">YouTube — @VIGRESTADMASKIN</a><br><br>
+            659 følgere og voksende
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CONTACT CTA
+       ======================================== -->
+  <section class="contact-cta" id="kontakt">
+    <div class="contact-cta__inner section-reveal">
+
+      <div class="contact-cta__left">
+        <p class="section-label">Ta kontakt</p>
+        <h2 class="contact-cta__title">Klar for å bestille?</h2>
+        <p class="contact-cta__text">
+          Ring Petter direkte, send en melding, eller kom innom lageret på Varhaug. Vi er alltid tilgjengelige — ingen sentralbord, ingen ventetid.
+        </p>
+        <div class="contact-cta__actions">
+          <a href="tel:+4798877800" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Ring oss nå
+          </a>
+          <a href="mailto:ege68@msn.com" class="btn btn--ghost-light">
+            Send melding
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-cta__card">
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">Telefon</div>
+            <div class="contact-cta__detail-value"><a href="tel:+4798877800">+47 988 77 800</a> — Petter svarer</div>
+          </div>
+        </div>
+
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">E-post</div>
+            <div class="contact-cta__detail-value"><a href="mailto:ege68@msn.com">ege68@msn.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">Besøk oss</div>
+            <div class="contact-cta__detail-value">Ånestadvegen 23<br>4360 Varhaug, Rogaland</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">
+        <div class="footer__logo-mark">VM</div>
+        <div>
+          <div class="footer__brand-text">Vigrestad Maskin AS</div>
+          <div class="footer__brand-sub">Norges eneste autoriserte Rippa-importør</div>
+        </div>
+      </a>
+
+      <nav class="footer__nav">
+        <a href="maskiner.html">Maskiner</a>
+        <a href="tilleggsutstyr.html">Tilleggsutstyr</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/vigrestadmaskin" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+          <a href="https://www.youtube.com/@VIGRESTADMASKIN" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            YouTube
+          </a>
+        </div>
+        <div class="footer__rippa-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__copy">&copy; 2026 Vigrestad Maskin AS &middot; Ånestadvegen 23, 4360 Varhaug</span>
+      <span class="footer__org">Org.nr 934 145 038</span>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    // Scroll-triggered reveal animations
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

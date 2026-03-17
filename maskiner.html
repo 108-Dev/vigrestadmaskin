@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alle maskiner – Vigrestad Maskin AS</title>
+  <meta name="description" content="Komplett utvalg av Rippa gravemaskiner, kompaktlastere og dumpere. Norges eneste autoriserte Rippa-importør. Alle priser inkl. mva.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       VIGRESTAD MASKIN — "Nordic Workshop" Design
+       ============================================ */
+
+    :root {
+      /* Brand Palette */
+      --charcoal: #1A1A1A;
+      --charcoal-90: rgba(26, 26, 26, 0.9);
+      --amber: #D4900A;
+      --amber-light: #E8A832;
+      --amber-glow: rgba(212, 144, 10, 0.15);
+      --rippa-blue: #003DA5;
+      --off-white: #F5F2ED;
+      --stone: #E8E4DE;
+      --stone-dark: #D4CFC7;
+      --forest: #4A6741;
+      --text-dark: #2D2D2D;
+      --text-warm: #6B6560;
+      --text-light: #9B9590;
+
+      /* Typography */
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'Karla', sans-serif;
+
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 3rem;
+      --space-xl: 5rem;
+
+      /* Layout */
+      --max-width: 1280px;
+      --nav-height: 80px;
+    }
+
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background-color: var(--off-white);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ============================================
+       NAVIGATION — exact match index.html
+       ============================================ */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(212, 144, 10, 0.1);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav__logo-mark {
+      width: 44px;
+      height: 44px;
+      background: #000;
+      border: 2px solid var(--amber);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      transition: transform 0.3s ease;
+    }
+
+    .nav__logo-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav__logo:hover .nav__logo-mark {
+      transform: scale(1.05);
+    }
+
+    .nav__logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .nav__logo-text span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.65rem;
+      color: var(--amber);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav__link {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--amber);
+      transition: width 0.3s ease;
+    }
+
+    .nav__link:hover,
+    .nav__link--active {
+      color: white;
+    }
+
+    .nav__link--active::after,
+    .nav__link:hover::after {
+      width: 100%;
+    }
+
+    .nav__cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      background: var(--amber);
+      text-decoration: none;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .nav__cta:hover {
+      background: var(--amber-light);
+      transform: translateY(-1px);
+    }
+
+    .nav__cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .nav__toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav__toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       PAGE HERO — Dark, breadcrumb, category nav
+       ============================================ */
+
+    .page-hero {
+      padding-top: calc(var(--nav-height) + 3.5rem);
+      padding-bottom: 3.5rem;
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle radial glow */
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(212, 144, 10, 0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 30%, rgba(0, 61, 165, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .page-hero__inner {
+      position: relative;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .page-hero__breadcrumb {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .page-hero__breadcrumb a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .page-hero__breadcrumb a:hover { color: var(--amber); }
+    .page-hero__breadcrumb span { color: var(--amber); }
+
+    .page-hero__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 3rem;
+    }
+
+    .page-hero__accent {
+      width: 48px;
+      height: 3px;
+      background: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .page-hero__title em {
+      font-style: normal;
+      color: var(--amber);
+    }
+
+    .page-hero__intro {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 480px;
+      align-self: end;
+    }
+
+    /* Category quick-nav pills */
+    .cat-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cat-nav__pill {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .cat-nav__pill:hover {
+      color: var(--charcoal);
+      background: var(--amber);
+      border-color: var(--amber);
+    }
+
+    /* ============================================
+       SHARED — Buttons
+       ============================================ */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn--primary {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    .btn--primary:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 144, 10, 0.3);
+    }
+
+    .btn--outline-dark {
+      background: #000;
+      color: var(--charcoal);
+      border: 2px solid var(--charcoal);
+    }
+
+    .btn--outline-dark:hover {
+      background: var(--charcoal);
+      color: var(--off-white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26, 26, 26, 0.12);
+    }
+
+    .btn--ghost-light {
+      background: rgba(255,255,255,0.07);
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.18);
+    }
+
+    .btn--ghost-light:hover {
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ============================================
+       SECTION HEADERS — exact match index.html
+       ============================================ */
+
+    .section-header {
+      margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-warm);
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    /* ============================================
+       MACHINES SECTION — exact match index.html
+       ============================================ */
+
+    .machines {
+      background: var(--off-white);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .machines--alt {
+      background: #fff;
+    }
+
+    .machines--stone {
+      background: var(--stone);
+    }
+
+    .machines__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Grid */
+    .machines__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .machines__grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Product card — exact match index.html */
+    .machine-card {
+      background: #fff;
+      border: 1px solid var(--stone);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
+    }
+
+    .machine-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 56px rgba(26, 26, 26, 0.1);
+      border-color: var(--stone-dark);
+    }
+
+    /* Photo */
+    .machine-card__photo-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--stone);
+    }
+
+    .machine-card__photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(26,26,26,0.06) 100%);
+      pointer-events: none;
+    }
+
+    .machine-card__photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      transition: transform 0.65s ease;
+    }
+
+    .machine-card:hover .machine-card__photo {
+      transform: scale(1.05);
+    }
+
+    /* Badge */
+    .machine-card__badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      line-height: 1.5;
+    }
+
+    .machine-card__badge--amber {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    .machine-card__badge--new {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .machine-card__badge--blue {
+      background: var(--rippa-blue);
+      color: #fff;
+    }
+
+    .machine-card__badge--dark {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Content */
+    .machine-card__content {
+      padding: 1.1rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .machine-card__category {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .machine-card__name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.015em;
+    }
+
+    .machine-card__desc {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--text-warm);
+      line-height: 1.58;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    /* Specs chips */
+    .machine-card__specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .machine-card__spec {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: var(--stone);
+      padding: 3px 9px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Price + CTA */
+    .machine-card__footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--stone);
+      margin-top: auto;
+    }
+
+    .machine-card__price-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .machine-card__price-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      color: var(--text-light);
+      line-height: 1;
+    }
+
+    .machine-card__price {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .machine-card__price em {
+      font-style: normal;
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0;
+    }
+
+    .machine-card__cta {
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid rgba(26,26,26,0.2);
+      transition: all 0.25s ease;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .machine-card__cta:hover {
+      background: var(--charcoal);
+      color: var(--off-white);
+      border-color: var(--charcoal);
+    }
+
+    /* ============================================
+       TRUST STRIP — exact match index.html
+       ============================================ */
+
+    .trust-strip {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(212, 144, 10, 0.12);
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212, 144, 10, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(212, 144, 10, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .trust-strip__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+
+    .trust-strip__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.25rem 1rem;
+      position: relative;
+    }
+
+    .trust-strip__item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .trust-strip__icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--amber);
+    }
+
+    .trust-strip__text {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    /* ============================================
+       CONTACT CTA — exact match index.html
+       ============================================ */
+
+    .contact-cta {
+      background: var(--charcoal);
+      padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212, 144, 10, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 50%, rgba(212, 144, 10, 0.05) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .contact-cta__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .contact-cta__left .section-label {
+      color: var(--amber);
+    }
+
+    .contact-cta__left .section-label::before {
+      background: var(--amber);
+    }
+
+    .contact-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-cta__text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-cta__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-cta__card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-cta__detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-cta__detail-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--amber-glow);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-cta__detail-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--amber);
+    }
+
+    .contact-cta__detail-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 3px;
+    }
+
+    .contact-cta__detail-value {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.4;
+    }
+
+    .contact-cta__detail-value a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-cta__detail-value a:hover {
+      color: var(--amber);
+    }
+
+    /* ============================================
+       FOOTER — exact match index.html
+       ============================================ */
+
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .footer__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .footer__logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--amber);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      flex-shrink: 0;
+    }
+
+    .footer__brand-text {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.2;
+    }
+
+    .footer__brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 2px;
+    }
+
+    .footer__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer__nav a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__nav a:hover {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .footer__social {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer__social a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__social a:hover {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .footer__social svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .footer__rippa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 61, 165, 0.1);
+      border: 1px solid rgba(0, 61, 165, 0.18);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-top: 0.6rem;
+      margin-left: calc(40px + 0.75rem);
+      width: fit-content;
+    }
+
+    .footer__rippa-badge svg {
+      width: 14px;
+      height: 14px;
+      color: var(--rippa-blue);
+      flex-shrink: 0;
+    }
+
+    .footer__rippa-badge span {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer__bottom {
+      max-width: var(--max-width);
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer__copy {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer__org {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .revealed {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    @media (max-width: 1100px) {
+      .machines__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .machines__grid--3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav__links {
+        display: none;
+      }
+      .nav__toggle {
+        display: block;
+      }
+      .page-hero__header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .page-hero__intro {
+        max-width: none;
+      }
+      .contact-cta__inner {
+        grid-template-columns: 1fr;
+      }
+      .footer__inner {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer__brand {
+        grid-column: span 2;
+      }
+      .trust-strip__inner {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .trust-strip__item:nth-child(4),
+      .trust-strip__item:nth-child(5) {
+        display: none;
+      }
+      .trust-strip__item:nth-child(3)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      :root { --nav-height: 64px; }
+      .machines__grid,
+      .machines__grid--3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .machines__grid,
+      .machines__grid--3 {
+        grid-template-columns: 1fr;
+      }
+      .footer__inner {
+        grid-template-columns: 1fr;
+      }
+      .footer__brand {
+        grid-column: span 1;
+      }
+      .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-mark"><img src="vigrestad_icon.svg" alt="VM" class="nav__logo-icon"></div>
+        <div class="nav__logo-text">
+          Vigrestad Maskin
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="maskiner.html" class="nav__link nav__link--active">Maskiner</a></li>
+        <li><a href="tilleggsutstyr.html" class="nav__link">Tilleggsutstyr</a></li>
+        <li><a href="om-oss.html" class="nav__link">Om oss</a></li>
+        <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
+        <li>
+          <a href="tel:+4798877800" class="nav__cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            988 77 800
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Meny">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       PAGE HERO
+       ======================================== -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Hjem</a> &nbsp;/&nbsp; <span>Maskiner</span>
+      </div>
+
+      <div class="page-hero__header">
+        <div>
+          <div class="page-hero__accent"></div>
+          <h1 class="page-hero__title">Alle <em>Rippa</em>-maskiner</h1>
+        </div>
+        <p class="page-hero__intro">
+          Fra 1-tonneren som passer i hageporten til den profesjonelle 2,4-tonns maskinen. 2026-modeller på innendørs lager. Alle priser inkl. mva.
+        </p>
+      </div>
+
+      <nav class="cat-nav" aria-label="Kategorier">
+        <a href="#minigravere-1t" class="cat-nav__pill">Minigravere 1-tonn</a>
+        <a href="#minigravere-stor" class="cat-nav__pill">Minigravere 1,3–2,4 tonn</a>
+        <a href="#kompaktlastere" class="cat-nav__pill">Kompaktlastere</a>
+        <a href="#dumpere" class="cat-nav__pill">Dumpere</a>
+        <a href="#pakketilbud" class="cat-nav__pill">Pakketilbud</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CATEGORY 1 — Minigravere 1-tonn
+       ======================================== -->
+  <section class="machines section-reveal" id="minigravere-1t">
+    <div class="machines__inner">
+
+      <header class="section-header">
+        <p class="section-label">Minigraver · 1-tonn</p>
+        <h2 class="section-title">1-tonnsklassen</h2>
+        <p class="section-subtitle">Vår mest populære klasse. Kompakte nok for hageport og terrasse, kraftige nok for grøfting og fundament. Lett å henge på tilhenger.</p>
+      </header>
+
+      <div class="machines__grid">
+
+        <!-- R10 eco -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-f28d8d41-393f-452d-a507-1901c9c3f12c.jpg"
+              alt="Rippa R10 eco minigraver"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R10 eco</h3>
+            <p class="machine-card__desc">Inngangsmodellen. Solid 1-tonner med Koop diesel og pilotstyring som standard — til en skarp pris.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 000 kg</span>
+              <span class="machine-card__spec">Koop 11 hk</span>
+              <span class="machine-card__spec">Pilotstyring</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">73.125 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R10 eco+ -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-15498ff8-ede3-45c3-aac7-3543b1f9f025.jpg"
+              alt="Rippa R10 eco+ minigraver"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--amber">Bestselger</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R10 eco+</h3>
+            <p class="machine-card__desc">Bestselgeren. Alt du trenger til hage, tomt og lettere anleggsarbeid — med pilotstyring og Koop diesel som standard.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 000 kg</span>
+              <span class="machine-card__spec">Koop 11 hk</span>
+              <span class="machine-card__spec">Pilotstyring</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">75.650 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R10 eco+ Kubota Z482 -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-3cabea94-9a87-466d-ae57-6e36005446f2.jpg"
+              alt="Rippa R10 eco+ med Kubota Z482 motor"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--blue">Kubota</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R10 eco+ Kubota</h3>
+            <p class="machine-card__desc">R10 eco+ med Kubota Z482 dieselmotor. Japansk motorkvalitet for deg som ikke vil kompromisse.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 000 kg</span>
+              <span class="machine-card__spec">Kubota Z482</span>
+              <span class="machine-card__spec">11 hk</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">75.000 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R10 eco PRO (svingbar bom) -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-85ab7b54-760f-4344-ba80-ad5bbdc0d7cd.jpg"
+              alt="Rippa R10 eco PRO med svingbar bom"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--dark">Svingbar bom</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R10 eco PRO</h3>
+            <p class="machine-card__desc">Svingbar bom gir deg bedre rekkevidde langs grøfter, murer og vegger — i samme kompakte 1-tonnsformat.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 000 kg</span>
+              <span class="machine-card__spec">Koop 11 hk</span>
+              <span class="machine-card__spec">Svingbar bom</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">85.500 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R10 eco pro+ (sving + utvidbare belter) -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-6d5561d5-7101-4d5c-8ddd-58b5e42d0ec6.jpg"
+              alt="Rippa R10 eco pro+ med svingbar bom og utvidbare belter"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R10 eco pro+</h3>
+            <p class="machine-card__desc">Toppmodellen i 1-tonnsklassen. Svingbar bom og utvidbare belter — mer rekkevidde langs grøfter og murer.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 000 kg</span>
+              <span class="machine-card__spec">Svingbar bom</span>
+              <span class="machine-card__spec">Utvidbare belter</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">90.250 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R10 eco pro+ med hytte -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-298941da-2749-4d2c-be29-4b74466d31b5.jpg"
+              alt="Rippa R10 eco pro+ med lukket hytte"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--dark">Med hytte</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R10 eco pro+ hytte</h3>
+            <p class="machine-card__desc">R10 eco pro+ med lukket hytte for helårsbruk. Vær- og støybeskyttelse — klar for både sommer og vinter.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 100 kg</span>
+              <span class="machine-card__spec">Svingbar bom</span>
+              <span class="machine-card__spec">Lukket hytte</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">99.875 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R06 Eco Kubota (smal) -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-6cd07f44-c6a0-49ec-85f6-09213c853d94.jpg"
+              alt="Rippa R06 Eco Kubota smal minigraver 74,7 cm"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--blue">Kubota</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · Under 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R06 Eco (74,7 cm)</h3>
+            <p class="machine-card__desc">Bare 75 cm bred — gjennom smale porter og ned i trange grøfter der andre ikke rekker. Kubota Z482 som standard.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">747 kg</span>
+              <span class="machine-card__spec">Kubota Z482</span>
+              <span class="machine-card__spec">75 cm smal</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">80.000 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.machines__grid -->
+    </div><!-- /.machines__inner -->
+  </section>
+
+  <!-- ========================================
+       CATEGORY 2 — Minigravere 1,3–2,4 tonn
+       ======================================== -->
+  <section class="machines machines--alt section-reveal" id="minigravere-stor">
+    <div class="machines__inner">
+
+      <header class="section-header">
+        <p class="section-label">Minigraver · 1,3–2,4 tonn</p>
+        <h2 class="section-title">Større kraft, samme presisjon</h2>
+        <p class="section-subtitle">Kubota-motorer, mer løftekraft og dybde for profesjonelle og krevende jobber. Valget for håndverkere og små entreprenører.</p>
+      </header>
+
+      <div class="machines__grid">
+
+        <!-- R13 PRO+ NY 2026 -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-1f0669a0-c7a4-4dc1-a94a-5ee0ecda6966.jpg"
+              alt="Rippa R13 PRO+ 2026 minigraver"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--new">NY 2026</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1,3 tonn</span>
+            <h3 class="machine-card__name">Rippa R13 PRO+</h3>
+            <p class="machine-card__desc">Steget opp fra 1-tonnsklassen. Kubota D722, 17 hk — merkbart mer kraft og gravedybde for krevende jobber.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 320 kg</span>
+              <span class="machine-card__spec">Kubota D722</span>
+              <span class="machine-card__spec">17 hk</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">149.875 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R15 eco med hytte -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-d0e32725-74a8-4f38-8762-1315c49a82a5.jpg"
+              alt="Rippa R15 eco med lukket hytte"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--dark">Med hytte</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · ~1,6 tonn</span>
+            <h3 class="machine-card__name">Rippa R15 eco</h3>
+            <p class="machine-card__desc">1,6 tonn med Kubota D722 og lukket hytte som standard. Godt valg for håndverkere og mindre entreprenører.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">~1 600 kg</span>
+              <span class="machine-card__spec">Kubota D722</span>
+              <span class="machine-card__spec">Lukket hytte</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">129.000 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R18 PRO med hytte -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-2c75f691-2c6e-40b2-a1d5-a02a5d41ba4d.jpg"
+              alt="Rippa R18 PRO med lukket hytte"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--dark">Med hytte</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · ~1,9 tonn</span>
+            <h3 class="machine-card__name">Rippa R18 PRO</h3>
+            <p class="machine-card__desc">1,9 tonn med Kubota D902 og lukket hytte. Seriøs maskin for profesjonelt bruk — klar for de tøffe jobbene.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">~1 900 kg</span>
+              <span class="machine-card__spec">Kubota D902</span>
+              <span class="machine-card__spec">Lukket hytte</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">189.800 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- R22 PRO -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-9c11e76b-0bcc-49e7-ad60-d9931ff36cee.jpg"
+              alt="Rippa R22 PRO minigraver 2,4 tonn"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--blue">Kubota</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 2,4 tonn</span>
+            <h3 class="machine-card__name">Rippa R22 PRO</h3>
+            <p class="machine-card__desc">Vår største. 2,4 tonn med Kubota D1105 — rekkevidde og kraft på linje med mye større maskiner.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">~2 400 kg</span>
+              <span class="machine-card__spec">Kubota D1105</span>
+              <span class="machine-card__spec">1 123 cc</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">240.000 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.machines__grid -->
+    </div><!-- /.machines__inner -->
+  </section>
+
+  <!-- ========================================
+       CATEGORY 3 — Kompaktlastere
+       ======================================== -->
+  <section class="machines section-reveal" id="kompaktlastere">
+    <div class="machines__inner">
+
+      <header class="section-header">
+        <p class="section-label">Kompaktlastere</p>
+        <h2 class="section-title">Last, flytt, planerér</h2>
+        <p class="section-subtitle">Allsidige arbeidsmaskiner til de jobbene gravemaskinen ikke gjør alene. Perfekte partnere for et komplett sett.</p>
+      </header>
+
+      <div class="machines__grid machines__grid--3">
+
+        <!-- RS03 Kompaktlaster -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-ea9aff7c-5f59-4d5e-a2e4-ff1ddb7c079d.jpg"
+              alt="Rippa RS03 kompaktlaster"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--amber">Allsidig</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Kompaktlaster</span>
+            <h3 class="machine-card__name">Rippa RS03</h3>
+            <p class="machine-card__desc">720 kg allsidig arbeidsmaskin til en tilgjengelig pris. Laster, flytter og planerer — perfekt partner til gravemaskinen.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">720 kg</span>
+              <span class="machine-card__spec">B&amp;S 12 hk</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">52.500 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RL06 Midjestyrt -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-a94a24c9-d29a-4081-ad04-c0973bee9751.jpg"
+              alt="Rippa RL06 midjestyrt kompaktlaster"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--blue">Kubota</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Kompaktlaster · Midjestyrt</span>
+            <h3 class="machine-card__name">Rippa RL06</h3>
+            <p class="machine-card__desc">Midjestyrt for smidig manøvrering. Kubota D1105, større kapasitet og mer løftekraft enn RS03 — for krevende last.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">Kubota D1105</span>
+              <span class="machine-card__spec">Midjestyrt</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">140.000 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.machines__grid -->
+    </div><!-- /.machines__inner -->
+  </section>
+
+  <!-- ========================================
+       CATEGORY 4 — Dumpere
+       ======================================== -->
+  <section class="machines machines--alt section-reveal" id="dumpere">
+    <div class="machines__inner">
+
+      <header class="section-header">
+        <p class="section-label">Dumpere</p>
+        <h2 class="section-title">Frakt der gravemaskinen ikke rekker</h2>
+        <p class="section-subtitle">Selvlastende og smidig. Frakter stein, jord og materialer effektivt fra graveplassen — klar for kombinasjon med alle modellene.</p>
+      </header>
+
+      <div class="machines__grid machines__grid--3">
+
+        <!-- RD06 Selvlastende Dumper -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-50f171b6-9be8-4778-b63a-a4531f9239ad.jpg"
+              alt="Rippa RD06 selvlastende dumper"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Dumper · Selvlastende</span>
+            <h3 class="machine-card__name">Rippa RD06</h3>
+            <p class="machine-card__desc">Selvlastende og smidig. 400 kg kapasitet — frakter stein, jord og materialer dit gravemaskinen ikke rekker.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">518 kg</span>
+              <span class="machine-card__spec">B&amp;S 13 hk</span>
+              <span class="machine-card__spec">400 kg last</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">47.500 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.machines__grid -->
+    </div><!-- /.machines__inner -->
+  </section>
+
+  <!-- ========================================
+       CATEGORY 5 — Pakketilbud
+       ======================================== -->
+  <section class="machines section-reveal" id="pakketilbud">
+    <div class="machines__inner">
+
+      <header class="section-header">
+        <p class="section-label">Pakketilbud</p>
+        <h2 class="section-title">Alt du trenger, på én gang</h2>
+        <p class="section-subtitle">Komplett pakke med maskin og tilhenger. Spar koordinering og få alt klart fra dag én.</p>
+      </header>
+
+      <div class="machines__grid machines__grid--3">
+
+        <!-- R10 eco+ + Gaupen G1325T tipphenger -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-1a776a27-5c99-48c7-8c49-6bdf890a9404.jpg"
+              alt="Rippa R10 eco+ med Gaupen G1325T tipphenger pakketilbud"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--amber">Pakke</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Pakketilbud</span>
+            <h3 class="machine-card__name">R10 eco+ + Gaupen G1325T</h3>
+            <p class="machine-card__desc">Komplett startpakke: Rippa R10 eco+ minigraver og Gaupen G1325T tipphenger. Alt du trenger for å komme i gang fra dag én.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 000 kg</span>
+              <span class="machine-card__spec">Koop 11 hk</span>
+              <span class="machine-card__spec">+ Tipphenger</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Pakke fra</span>
+                <span class="machine-card__price">99.990 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="tel:+4798877800" class="machine-card__cta">Ring oss →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.machines__grid -->
+    </div><!-- /.machines__inner -->
+  </section>
+
+  <!-- ========================================
+       TRUST STRIP
+       ======================================== -->
+  <div class="trust-strip">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span class="trust-strip__text">CE-merket</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/>
+        </svg>
+        <span class="trust-strip__text">2 år / 1000t garanti</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span class="trust-strip__text">Innendørs lager</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        <span class="trust-strip__text">Landsdekkende frakt</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+        </svg>
+        <span class="trust-strip__text">Finansiering</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       CONTACT CTA
+       ======================================== -->
+  <section class="contact-cta">
+    <div class="contact-cta__inner section-reveal">
+
+      <div class="contact-cta__left">
+        <p class="section-label">Ta kontakt</p>
+        <h2 class="contact-cta__title">Usikker på hvilken maskin?</h2>
+        <p class="contact-cta__text">
+          Ring Petter direkte. Han kjenner alle maskinene inn og ut og hjelper deg finne den som passer til jobben, tomten og budsjettet ditt.
+        </p>
+        <div class="contact-cta__actions">
+          <a href="tel:+4798877800" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Ring Petter nå
+          </a>
+          <a href="mailto:ege68@msn.com" class="btn btn--ghost-light">
+            Send melding
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-cta__card">
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">Telefon</div>
+            <div class="contact-cta__detail-value"><a href="tel:+4798877800">+47 988 77 800</a> — Petter svarer</div>
+          </div>
+        </div>
+
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">E-post</div>
+            <div class="contact-cta__detail-value"><a href="mailto:ege68@msn.com">ege68@msn.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">Besøk oss</div>
+            <div class="contact-cta__detail-value">Ånestadvegen 23<br>4360 Varhaug, Rogaland</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="index.html" class="footer__brand">
+          <div class="footer__logo-mark">VM</div>
+          <div>
+            <div class="footer__brand-text">Vigrestad Maskin AS</div>
+            <div class="footer__brand-sub">Norges eneste autoriserte Rippa-importør</div>
+          </div>
+        </a>
+        <div class="footer__rippa-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="maskiner.html">Maskiner</a>
+        <a href="tilleggsutstyr.html">Tilleggsutstyr</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://www.facebook.com/vigrestadmaskin" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          Facebook
+        </a>
+        <a href="https://www.youtube.com/@VIGRESTADMASKIN" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Vigrestad Maskin AS · Ånestadvegen 23, 4360 Varhaug</span>
+      <span class="footer__org">Org.nr 934 145 038</span>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    // Nav scroll behavior
+    const nav = document.getElementById('nav');
+
+    window.addEventListener('scroll', () => {
+      // Nav is always scrolled-state on this page (already has bg)
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+    });
+
+    // Scroll-triggered reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.section-reveal').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      revealObserver.observe(el);
+    });
+
+    // Smooth scroll for category nav pills
+    document.querySelectorAll('.cat-nav__pill').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(pill.getAttribute('href'));
+        if (target) {
+          const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 80;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset - 24;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

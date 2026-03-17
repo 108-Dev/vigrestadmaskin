@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigrestad Maskin AS — Norges eneste autoriserte Rippa-importør</title>
+  <meta name="description" content="Norges eneste autoriserte Rippa-importør. 2026-modeller på lager. 2 års garanti, innendørs lager, levering hele Norge. Ring 988 77 800.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       VIGRESTAD MASKIN — "Nordic Workshop" Design
+       ============================================ */
+
+    :root {
+      /* Brand Palette */
+      --charcoal: #1A1A1A;
+      --charcoal-90: rgba(26, 26, 26, 0.9);
+      --amber: #D4900A;
+      --amber-light: #E8A832;
+      --amber-glow: rgba(212, 144, 10, 0.15);
+      --rippa-blue: #003DA5;
+      --off-white: #F5F2ED;
+      --stone: #E8E4DE;
+      --stone-dark: #D4CFC7;
+      --forest: #4A6741;
+      --text-dark: #2D2D2D;
+      --text-warm: #6B6560;
+      --text-light: #9B9590;
+
+      /* Typography */
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'Karla', sans-serif;
+
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 3rem;
+      --space-xl: 5rem;
+      --space-2xl: 8rem;
+
+      /* Layout */
+      --max-width: 1280px;
+      --nav-height: 80px;
+    }
+
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background-color: var(--off-white);
+      overflow-x: hidden;
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+    }
+
+    .nav--scrolled {
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(212, 144, 10, 0.1);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav__logo-mark {
+      width: 44px;
+      height: 44px;
+      background: #000;
+      border: 2px solid var(--amber);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      transition: transform 0.3s ease;
+    }
+
+    .nav__logo-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav__logo:hover .nav__logo-mark {
+      transform: scale(1.05);
+    }
+
+    .nav__logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .nav__logo-text span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.65rem;
+      color: var(--amber);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav__link {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--amber);
+      transition: width 0.3s ease;
+    }
+
+    .nav__link:hover {
+      color: white;
+    }
+
+    .nav__link:hover::after {
+      width: 100%;
+    }
+
+    .nav__cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      background: var(--amber);
+      text-decoration: none;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .nav__cta:hover {
+      background: var(--amber-light);
+      transform: translateY(-1px);
+    }
+
+    .nav__cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Mobile nav toggle */
+    .nav__toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav__toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      max-height: 1000px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: var(--charcoal);
+    }
+
+    .hero__image-wrapper {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      animation: heroZoom 25s ease-out forwards;
+      will-change: transform;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.08); }
+      to { transform: scale(1.0); }
+    }
+
+    /* Multi-layer gradient for readability + mood */
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        /* Left-side darken where text lives */
+        linear-gradient(
+          90deg,
+          rgba(26, 26, 26, 0.6) 0%,
+          rgba(26, 26, 26, 0.35) 45%,
+          rgba(26, 26, 26, 0.1) 70%,
+          rgba(26, 26, 26, 0.05) 100%
+        ),
+        /* Bottom-heavy vertical gradient */
+        linear-gradient(
+          180deg,
+          rgba(26, 26, 26, 0.35) 0%,
+          rgba(26, 26, 26, 0.2) 25%,
+          rgba(26, 26, 26, 0.35) 50%,
+          rgba(26, 26, 26, 0.8) 80%,
+          rgba(26, 26, 26, 0.95) 100%
+        );
+    }
+
+    /* Subtle grain texture overlay */
+    .hero__grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      pointer-events: none;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      padding-bottom: clamp(3rem, 6vh, 5rem);
+    }
+
+    /* Amber accent line */
+    .hero__accent {
+      width: 48px;
+      height: 3px;
+      background: var(--amber);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease-out 0.3s forwards;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 680px;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease-out 0.5s forwards;
+    }
+
+    .hero__title em {
+      font-style: normal;
+      color: var(--amber);
+    }
+
+    .hero__subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
+      max-width: 520px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease-out 0.7s forwards;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease-out 0.9s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn--primary {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    .btn--primary:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 144, 10, 0.3);
+    }
+
+    .btn--ghost {
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn--ghost:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Scroll indicator */
+    .hero__scroll {
+      position: absolute;
+      bottom: 1.5rem;
+      right: clamp(1.5rem, 4vw, 3rem);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 1.5s forwards;
+    }
+
+    .hero__scroll-text {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      writing-mode: vertical-rl;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--amber), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    /* ============================================
+       TRUST STRIP
+       ============================================ */
+
+    .trust-strip {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(212, 144, 10, 0.12);
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle texture */
+    .trust-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212, 144, 10, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(212, 144, 10, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .trust-strip__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+
+    .trust-strip__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.25rem 1rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .trust-strip__item:nth-child(1) { animation-delay: 1.0s; }
+    .trust-strip__item:nth-child(2) { animation-delay: 1.1s; }
+    .trust-strip__item:nth-child(3) { animation-delay: 1.2s; }
+    .trust-strip__item:nth-child(4) { animation-delay: 1.3s; }
+    .trust-strip__item:nth-child(5) { animation-delay: 1.4s; }
+
+    /* Divider between items */
+    .trust-strip__item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .trust-strip__icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--amber);
+    }
+
+    .trust-strip__text {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    /* ============================================
+       TESTIMONIALS — Editorial Light
+       ============================================ */
+
+    .testimonials {
+      background: #FDFBF7;
+      padding: clamp(5rem, 10vw, 7rem) clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--stone);
+      border-bottom: 1px solid var(--stone);
+    }
+
+    /* Decorative oversized quote mark */
+    .testimonials::before {
+      content: '\201C';
+      position: absolute;
+      top: -0.15em;
+      right: clamp(2rem, 8vw, 8rem);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(16rem, 25vw, 28rem);
+      line-height: 1;
+      color: var(--amber);
+      opacity: 0.055;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .testimonials__inner {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Section label */
+    .testimonials__label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonials__label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(212, 144, 10, 0.3), transparent);
+    }
+
+    /* Quote area */
+    .testimonials__quotes {
+      position: relative;
+      min-height: 140px;
+      margin-bottom: 2.5rem;
+      padding-left: 1.75rem;
+      border-left: 3px solid var(--amber);
+    }
+
+    .testimonials__quote {
+      position: absolute;
+      inset: 0;
+      padding-left: inherit;
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out;
+      opacity: 0;
+      transform: translateY(12px);
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .testimonials__quote.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+      pointer-events: auto;
+      position: relative;
+    }
+
+    .testimonials__quote-text {
+      font-family: var(--font-body);
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .testimonials__quote-mark {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--amber);
+      opacity: 0.7;
+    }
+
+    /* Author row */
+    .testimonials__author-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    /* Avatar buttons */
+    .testimonials__avatars {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonials__avatar-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.02em;
+      transition: all 0.35s ease-out;
+      position: relative;
+      box-shadow: 0 0 0 2.5px #FDFBF7;
+      background: var(--stone);
+      color: var(--text-warm);
+    }
+
+    .testimonials__avatar-btn:not(:first-child) {
+      margin-left: -8px;
+    }
+
+    .testimonials__avatar-btn:hover {
+      background: var(--stone-dark);
+      color: var(--text-dark);
+      transform: scale(1.08);
+      z-index: 2;
+    }
+
+    .testimonials__avatar-btn.is-active {
+      background: var(--amber);
+      color: var(--charcoal);
+      transform: scale(1.15);
+      z-index: 3;
+      box-shadow: 0 0 0 2.5px #FDFBF7, 0 0 20px rgba(212, 144, 10, 0.18);
+    }
+
+    /* Divider */
+    .testimonials__divider {
+      width: 1px;
+      height: 36px;
+      background: var(--stone-dark);
+      flex-shrink: 0;
+    }
+
+    /* Author info (animated) */
+    .testimonials__author-info {
+      position: relative;
+      min-height: 44px;
+      flex: 1;
+    }
+
+    .testimonials__author {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+      opacity: 0;
+      transform: translateX(-8px);
+      pointer-events: none;
+    }
+
+    .testimonials__author.is-active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+      position: relative;
+    }
+
+    .testimonials__author-name {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.3;
+    }
+
+    .testimonials__author-meta {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2px;
+    }
+
+    .testimonials__fb-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--text-light);
+    }
+
+    .testimonials__fb-badge svg {
+      width: 12px;
+      height: 12px;
+      color: #1877F2;
+    }
+
+    /* Progress dots */
+    .testimonials__dots {
+      display: flex;
+      gap: 6px;
+      margin-left: auto;
+    }
+
+    .testimonials__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--stone-dark);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .testimonials__dot.is-active {
+      background: var(--amber);
+      transform: scale(1.3);
+    }
+
+    /* ============================================
+       MACHINES — Featured Grid
+       ============================================ */
+
+    .machines {
+      background: var(--off-white);
+      padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .machines__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Reusable section header */
+    .section-header {
+      margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-warm);
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    /* Grid */
+    .machines__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Product card */
+    .machine-card {
+      background: #fff;
+      border: 1px solid var(--stone);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
+    }
+
+    .machine-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 56px rgba(26, 26, 26, 0.1);
+      border-color: var(--stone-dark);
+    }
+
+    /* Photo */
+    .machine-card__photo-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--stone);
+    }
+
+    .machine-card__photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(26,26,26,0.06) 100%);
+      pointer-events: none;
+    }
+
+    .machine-card__photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      transition: transform 0.65s ease;
+    }
+
+    .machine-card:hover .machine-card__photo {
+      transform: scale(1.05);
+    }
+
+    /* Badge */
+    .machine-card__badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      line-height: 1.5;
+    }
+
+    .machine-card__badge--amber {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    .machine-card__badge--new {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    /* Content */
+    .machine-card__content {
+      padding: 1.1rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .machine-card__category {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .machine-card__name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.015em;
+    }
+
+    .machine-card__desc {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--text-warm);
+      line-height: 1.58;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    /* Specs chips */
+    .machine-card__specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .machine-card__spec {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: var(--stone);
+      padding: 3px 9px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Price + CTA */
+    .machine-card__footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--stone);
+      margin-top: auto;
+    }
+
+    .machine-card__price-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .machine-card__price-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      color: var(--text-light);
+      line-height: 1;
+    }
+
+    .machine-card__price {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .machine-card__price em {
+      font-style: normal;
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0;
+    }
+
+    .machine-card__cta {
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid rgba(26,26,26,0.2);
+      transition: all 0.25s ease;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .machine-card__cta:hover {
+      background: var(--charcoal);
+      color: var(--off-white);
+      border-color: var(--charcoal);
+    }
+
+    /* Section footer CTA */
+    .machines__footer {
+      text-align: center;
+    }
+
+    .btn--outline-dark {
+      background: #000;
+      color: var(--charcoal);
+      border: 2px solid var(--charcoal);
+    }
+
+    .btn--outline-dark:hover {
+      background: var(--charcoal);
+      color: var(--off-white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26, 26, 26, 0.12);
+    }
+
+    /* ============================================
+       WHY US — Derfor handler du hos oss
+       ============================================ */
+
+    .why-us {
+      background: var(--stone);
+      padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle decorative mark */
+    .why-us::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(212, 144, 10, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .why-us__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .why-us__layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    /* Sticky left column */
+    .why-us__intro {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+    }
+
+    .why-us__intro .section-label {
+      margin-bottom: 0.9rem;
+    }
+
+    .why-us__intro .section-title {
+      margin-bottom: 1.25rem;
+    }
+
+    .why-us__intro-text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-warm);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .why-us__contact-nudge {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .why-us__contact-nudge a {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.25s ease;
+    }
+
+    .why-us__contact-nudge a:hover {
+      color: var(--amber);
+    }
+
+    .why-us__contact-nudge a svg {
+      width: 16px;
+      height: 16px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* USP blocks grid */
+    .why-us__blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--stone-dark);
+      border: 1px solid var(--stone-dark);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .why-us__block {
+      background: var(--off-white);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: background 0.3s ease;
+    }
+
+    .why-us__block:hover {
+      background: #fff;
+    }
+
+    .why-us__icon {
+      width: 40px;
+      height: 40px;
+      background: var(--amber-glow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .why-us__icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--amber);
+    }
+
+    .why-us__block-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .why-us__block-text {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--text-warm);
+      line-height: 1.65;
+    }
+
+    /* ============================================
+       CONTACT CTA — Klar for å bestille?
+       ============================================ */
+
+    .contact-cta {
+      background: var(--charcoal);
+      padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212, 144, 10, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 50%, rgba(212, 144, 10, 0.05) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .contact-cta__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .contact-cta__left .section-label {
+      color: var(--amber);
+    }
+
+    .contact-cta__left .section-label::before {
+      background: var(--amber);
+    }
+
+    .contact-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-cta__text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-cta__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn--ghost-light {
+      background: rgba(255,255,255,0.07);
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.18);
+    }
+
+    .btn--ghost-light:hover {
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Contact details card */
+    .contact-cta__card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-cta__detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-cta__detail-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--amber-glow);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-cta__detail-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--amber);
+    }
+
+    .contact-cta__detail-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 3px;
+    }
+
+    .contact-cta__detail-value {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.4;
+    }
+
+    .contact-cta__detail-value a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-cta__detail-value a:hover {
+      color: var(--amber);
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .footer__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .footer__logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--amber);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      flex-shrink: 0;
+    }
+
+    .footer__brand-text {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.2;
+    }
+
+    .footer__brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 2px;
+    }
+
+    .footer__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer__nav a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__nav a:hover {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .footer__social {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer__social a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__social a:hover {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .footer__social svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Rippa partner badge */
+    .footer__rippa-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0, 61, 165, 0.1);
+      border: 1px solid rgba(0, 61, 165, 0.18);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-top: 0.6rem;
+      margin-left: calc(40px + 0.75rem); /* align with brand text */
+      width: fit-content;
+    }
+
+    .footer__rippa-badge svg {
+      width: 14px; height: 14px;
+      color: var(--rippa-blue);
+      flex-shrink: 0;
+    }
+
+    .footer__rippa-badge span {
+      font-family: var(--font-display);
+      font-size: 0.6rem; font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer__bottom {
+      max-width: var(--max-width);
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer__copy {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer__org {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    @media (max-width: 900px) {
+      .contact-cta__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer__brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__brand {
+        grid-column: span 1;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Scroll-triggered reveal */
+    .revealed {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    @media (max-width: 1100px) {
+      .machines__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-us__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .why-us__intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav__links {
+        display: none;
+      }
+
+      .nav__toggle {
+        display: block;
+      }
+
+      .trust-strip__inner {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .trust-strip__item:nth-child(4),
+      .trust-strip__item:nth-child(5) {
+        display: none;
+      }
+
+      .trust-strip__item:nth-child(3)::after {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --nav-height: 64px;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .hero__image {
+        object-position: 60% 40%;
+      }
+
+      .trust-strip__inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .trust-strip__item {
+        justify-content: flex-start;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .trust-strip__item::after {
+        display: none !important;
+      }
+
+      .trust-strip__item:nth-child(4),
+      .trust-strip__item:nth-child(5) {
+        display: flex;
+      }
+
+      .hero__scroll {
+        display: none;
+      }
+
+      .machines__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .machine-card__photo {
+        height: 220px;
+      }
+
+      .why-us__blocks {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <div class="nav__logo-mark"><img src="vigrestad_icon.svg" alt="VM" class="nav__logo-icon"></div>
+        <div class="nav__logo-text">
+          Vigrestad Maskin
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="maskiner.html" class="nav__link">Maskiner</a></li>
+        <li><a href="tilleggsutstyr.html" class="nav__link">Tilleggsutstyr</a></li>
+        <li><a href="om-oss.html" class="nav__link">Om oss</a></li>
+        <li><a href="kontakt.html" class="nav__link">Kontakt</a></li>
+        <li>
+          <a href="tel:+4798877800" class="nav__cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            988 77 800
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Meny">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       HERO SECTION
+       ======================================== -->
+  <section class="hero">
+    <div class="hero__image-wrapper">
+      <img
+        src="images/R10-eco-pro-01.jpg"
+        alt="Rippa R10 eco pro minigraver i norsk høstlandskap med fjell og solnedgang"
+        class="hero__image"
+        loading="eager"
+      >
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__grain"></div>
+
+    <div class="hero__content">
+      <div class="hero__accent"></div>
+      <h1 class="hero__title">
+        Norges eneste autoriserte <em>Rippa</em>-importør
+      </h1>
+      <p class="hero__subtitle">
+        Kompakte gravemaskiner bygget for norske forhold. 2026-modeller på lager, 2 års garanti, levering over hele landet.
+      </p>
+      <div class="hero__actions">
+        <a href="maskiner.html" class="btn btn--primary">
+          Se maskinene
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="tel:+4798877800" class="btn btn--ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Ring oss: 988 77 800
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TRUST STRIP
+       ======================================== -->
+  <div class="trust-strip">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span class="trust-strip__text">CE-merket</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/>
+        </svg>
+        <span class="trust-strip__text">2 år / 1000t garanti</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span class="trust-strip__text">Innendørs lager</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        <span class="trust-strip__text">Landsdekkende frakt</span>
+      </div>
+      <div class="trust-strip__item">
+        <svg class="trust-strip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+        </svg>
+        <span class="trust-strip__text">Finansiering</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       MASKINER — Utvalgte modeller
+       ======================================== -->
+  <section class="machines" id="maskiner">
+    <div class="machines__inner section-reveal">
+
+      <header class="section-header">
+        <p class="section-label">Våre maskiner</p>
+        <h2 class="section-title">Kraftig nok for jobben.<br>Kompakt nok for tomten.</h2>
+        <p class="section-subtitle">Minigravere, kompaktlastere og dumpere — ett utvalg fra hver kategori. Fra 1-tonneren til den profesjonelle 2,4-tonns maskinen. Alle priser inkl. mva.</p>
+      </header>
+
+      <div class="machines__grid">
+
+        <!-- Kort 1: R10 eco+ — Bestselger -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/R10-eco-pro-04.jpg"
+              alt="Rippa R10 eco+ minigraver i norsk høstlandskap med dramatisk himmel"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--amber">Bestselger</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1-tonn</span>
+            <h3 class="machine-card__name">Rippa R10 eco+</h3>
+            <p class="machine-card__desc">Bestselgeren. Alt du trenger for hage, tomt og lettere anleggsarbeid — med pilotstyring og Koop diesel som standard.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 000 kg</span>
+              <span class="machine-card__spec">Koop 11 hk</span>
+              <span class="machine-card__spec">Pilotstyring</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">75.650 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="maskiner.html#minigravere-1t" class="machine-card__cta">Se modell →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kort 2: R13 PRO+ NY 2026 -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-1f0669a0-c7a4-4dc1-a94a-5ee0ecda6966.jpg"
+              alt="Rippa R13 PRO+ minigraver 2026"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+            <span class="machine-card__badge machine-card__badge--new">NY 2026</span>
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Minigraver · 1,3 tonn</span>
+            <h3 class="machine-card__name">Rippa R13 PRO+</h3>
+            <p class="machine-card__desc">Steget opp fra 1-tonnsklassen. Kubota D722, 17 hk — merkbart mer kraft og gravedybde for krevende jobber.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">1 320 kg</span>
+              <span class="machine-card__spec">Kubota D722</span>
+              <span class="machine-card__spec">17 hk</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">149.875 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="maskiner.html#minigravere-stor" class="machine-card__cta">Se modell →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kort 3: RS03 Kompaktlaster -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-ea9aff7c-5f59-4d5e-a2e4-ff1ddb7c079d.jpg"
+              alt="Rippa RS03 kompaktlaster"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Kompaktlaster</span>
+            <h3 class="machine-card__name">Rippa RS03</h3>
+            <p class="machine-card__desc">Laster, flytter og planerer. 720 kg allsidig arbeidsmaskin til en tilgjengelig pris — perfekt partner til gravemaskinen.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">720 kg</span>
+              <span class="machine-card__spec">B&amp;S 12 hk</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">52.500 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="maskiner.html#kompaktlastere" class="machine-card__cta">Se modell →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kort 4: RD06 Dumper -->
+        <div class="machine-card">
+          <div class="machine-card__photo-wrap">
+            <img
+              src="images/finn-50f171b6-9be8-4778-b63a-a4531f9239ad.jpg"
+              alt="Rippa RD06 selvlastende dumper"
+              class="machine-card__photo"
+              loading="lazy"
+            >
+          </div>
+          <div class="machine-card__content">
+            <span class="machine-card__category">Dumper · Selvlastende</span>
+            <h3 class="machine-card__name">Rippa RD06</h3>
+            <p class="machine-card__desc">Selvlastende og smidig. 400 kg kapasitet — frakter stein, jord og materialer dit gravemaskinen ikke rekker.</p>
+            <div class="machine-card__specs">
+              <span class="machine-card__spec">518 kg</span>
+              <span class="machine-card__spec">B&amp;S 13 hk</span>
+              <span class="machine-card__spec">400 kg last</span>
+            </div>
+            <div class="machine-card__footer">
+              <div class="machine-card__price-wrap">
+                <span class="machine-card__price-label">Fra</span>
+                <span class="machine-card__price">47.500 kr <em>inkl. mva</em></span>
+              </div>
+              <a href="maskiner.html#dumpere" class="machine-card__cta">Se modell →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.machines__grid -->
+
+      <div class="machines__footer section-reveal">
+        <a href="maskiner.html" class="btn btn--outline-dark">
+          Se alle maskiner
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+    </div><!-- /.machines__inner -->
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS — Editorial Switcher
+       ======================================== -->
+  <section class="testimonials section-reveal" id="testimonials">
+    <div class="testimonials__inner">
+      <div class="testimonials__label">
+        Hva kundene sier
+      </div>
+
+      <!-- Quotes with left accent bar -->
+      <div class="testimonials__quotes">
+        <div class="testimonials__quote is-active" data-index="0">
+          <p class="testimonials__quote-text">
+            <span class="testimonials__quote-mark">&ldquo;</span>Ufattelig stødig og behagelig å kjøre, selv om det bare er en 1-tonner. Har kjørt mange merker som Bobcat og Kubota. Det som er litt gøy er at R10 Rippa er raskere i hydraulikken — bedre flyt og mye raskere arbeid. Ikke hatt et eneste problem så langt, og nå er den gått 250 timer.<span class="testimonials__quote-mark">&rdquo;</span>
+          </p>
+        </div>
+        <div class="testimonials__quote" data-index="1">
+          <p class="testimonials__quote-text">
+            <span class="testimonials__quote-mark">&ldquo;</span>Hyggelige og hjelpsom med å få en R10 levert helt hjem. Anbefales!<span class="testimonials__quote-mark">&rdquo;</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Author row -->
+      <div class="testimonials__author-row">
+        <!-- Clickable avatars -->
+        <div class="testimonials__avatars">
+          <button class="testimonials__avatar-btn is-active" data-index="0" aria-label="Les omtale fra Alexander Haugen">AH</button>
+          <button class="testimonials__avatar-btn" data-index="1" aria-label="Les omtale fra Jan Robin H Martinsen">JM</button>
+        </div>
+
+        <div class="testimonials__divider"></div>
+
+        <!-- Author info (animated) -->
+        <div class="testimonials__author-info">
+          <div class="testimonials__author is-active" data-index="0">
+            <span class="testimonials__author-name">Alexander Haugen</span>
+            <span class="testimonials__author-meta">
+              R10-kunde · 250+ timer
+              <span class="testimonials__fb-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Anbefaler
+              </span>
+            </span>
+          </div>
+          <div class="testimonials__author" data-index="1">
+            <span class="testimonials__author-name">Jan Robin H Martinsen</span>
+            <span class="testimonials__author-meta">
+              R10-kunde
+              <span class="testimonials__fb-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Anbefaler
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="testimonials__dots">
+          <button class="testimonials__dot is-active" data-index="0" aria-label="Omtale 1"></button>
+          <button class="testimonials__dot" data-index="1" aria-label="Omtale 2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       THEREFORE — Derfor handler du hos oss
+       ======================================== -->
+  <section class="why-us" id="om-oss">
+    <div class="why-us__inner section-reveal">
+      <div class="why-us__layout">
+
+        <!-- Left: sticky intro -->
+        <div class="why-us__intro">
+          <p class="section-label">Derfor velger de oss</p>
+          <h2 class="section-title">Derfor handler du hos oss</h2>
+          <p class="why-us__intro-text">
+            Vi er ikke en nettbutikk. Vi er en maskinforhandler med eget lager, verksted og deler — og én person du alltid kan ringe direkte.
+          </p>
+          <div class="why-us__contact-nudge">
+            <a href="tel:+4798877800">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              Ring Petter: 988 77 800
+            </a>
+            <a href="mailto:ege68@msn.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              ege68@msn.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: USP blocks -->
+        <div class="why-us__blocks">
+
+          <div class="why-us__block">
+            <div class="why-us__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <h3 class="why-us__block-title">Autorisert importør</h3>
+            <p class="why-us__block-text">Eneste i Norge med Rippa-agentur. Du kjøper direkte i kjeden — med offisiell garanti og tilgang til originale deler fra fabrikken.</p>
+          </div>
+
+          <div class="why-us__block">
+            <div class="why-us__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3 class="why-us__block-title">Innendørs lager</h3>
+            <p class="why-us__block-text">Alle maskiner lagres innendørs på Varhaug. Du får alltid en tørr, ren maskin i topp stand — ikke en som har stått ute i regn og salt.</p>
+          </div>
+
+          <div class="why-us__block">
+            <div class="why-us__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="why-us__block-title">Verksted og deler</h3>
+            <p class="why-us__block-text">Eget verksted og delelager på stedet. Vi selger ikke bare maskiner — vi følger opp med service og vedlikehold så lenge du eier maskinen.</p>
+          </div>
+
+          <div class="why-us__block">
+            <div class="why-us__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <h3 class="why-us__block-title">Levering hele Norge</h3>
+            <p class="why-us__block-text">Faste fraktpriser fra Rogaland til Tromsø. Ingen overraskelser, ingen skjulte kostnader. Du vet hva du betaler — før du bestiller.</p>
+          </div>
+
+          <div class="why-us__block">
+            <div class="why-us__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="why-us__block-title">Garanti du kan stole på</h3>
+            <p class="why-us__block-text">2 år / 1 000 timer fabrikkgaranti pluss 5 års reklamasjonsrett etter forbrukerkjøpsloven. Begge deler, ikke valget mellom dem.</p>
+          </div>
+
+          <div class="why-us__block">
+            <div class="why-us__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+            </div>
+            <h3 class="why-us__block-title">Ingen maskinførerbevis</h3>
+            <p class="why-us__block-text">Alle våre kompaktmaskiner kan kjøres uten maskinførerbevis. Klar til bruk fra dag én — uansett om du er proff eller privatperson.</p>
+          </div>
+
+        </div><!-- /.why-us__blocks -->
+
+      </div><!-- /.why-us__layout -->
+    </div><!-- /.why-us__inner -->
+  </section>
+
+  <!-- ========================================
+       CONTACT CTA
+       ======================================== -->
+  <section class="contact-cta" id="kontakt">
+    <div class="contact-cta__inner section-reveal">
+
+      <div class="contact-cta__left">
+        <p class="section-label">Ta kontakt</p>
+        <h2 class="contact-cta__title">Klar for å bestille?</h2>
+        <p class="contact-cta__text">
+          Ring Petter direkte, send en melding, eller kom innom lageret på Varhaug. Vi er alltid tilgjengelige — ingen sentralbord, ingen ventetid.
+        </p>
+        <div class="contact-cta__actions">
+          <a href="tel:+4798877800" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Ring oss nå
+          </a>
+          <a href="mailto:ege68@msn.com" class="btn btn--ghost-light">
+            Send melding
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-cta__card">
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">Telefon</div>
+            <div class="contact-cta__detail-value"><a href="tel:+4798877800">+47 988 77 800</a> — Petter svarer</div>
+          </div>
+        </div>
+
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">E-post</div>
+            <div class="contact-cta__detail-value"><a href="mailto:ege68@msn.com">ege68@msn.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-cta__detail">
+          <div class="contact-cta__detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-cta__detail-label">Besøk oss</div>
+            <div class="contact-cta__detail-value">Ånestadvegen 23<br>4360 Varhaug, Rogaland</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="/" class="footer__brand">
+          <div class="footer__logo-mark">VM</div>
+          <div>
+            <div class="footer__brand-text">Vigrestad Maskin AS</div>
+            <div class="footer__brand-sub">Norges eneste autoriserte Rippa-importør</div>
+          </div>
+        </a>
+        <div class="footer__rippa-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>Autorisert Rippa-importør</span>
+        </div>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="maskiner.html">Maskiner</a>
+        <a href="tilleggsutstyr.html">Tilleggsutstyr</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://www.facebook.com/vigrestadmaskin" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          Facebook
+        </a>
+        <a href="https://www.youtube.com/@VIGRESTADMASKIN" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Vigrestad Maskin AS · Ånestadvegen 23, 4360 Varhaug</span>
+      <span class="footer__org">Org.nr 934 145 038</span>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    // Nav scroll behavior
+    const nav = document.getElementById('nav');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 60) {
+        nav.classList.add('nav--scrolled');
+      } else {
+        nav.classList.remove('nav--scrolled');
+      }
+      lastScroll = scrollY;
+    }, { passive: true });
+
+    // Mobile nav toggle (placeholder)
+    const toggle = document.getElementById('navToggle');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+    });
+
+    // Scroll-triggered reveal animations
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.testimonials__inner, .section-reveal').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(32px)';
+      el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      revealObserver.observe(el);
+    });
+
+    // Testimonial switcher
+    const testimonialBtns = document.querySelectorAll('.testimonials__avatar-btn, .testimonials__dot');
+    const testimonialQuotes = document.querySelectorAll('.testimonials__quote');
+    const testimonialAuthors = document.querySelectorAll('.testimonials__author');
+    const testimonialDots = document.querySelectorAll('.testimonials__dot');
+    const testimonialAvatars = document.querySelectorAll('.testimonials__avatar-btn');
+
+    function setActiveTestimonial(index) {
+      testimonialQuotes.forEach(q => q.classList.remove('is-active'));
+      testimonialAuthors.forEach(a => a.classList.remove('is-active'));
+      testimonialDots.forEach(d => d.classList.remove('is-active'));
+      testimonialAvatars.forEach(a => a.classList.remove('is-active'));
+
+      document.querySelectorAll(`[data-index="${index}"]`).forEach(el => {
+        el.classList.add('is-active');
+      });
+    }
+
+    testimonialBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setActiveTestimonial(btn.dataset.index);
+      });
+    });
+
+    // Auto-rotate every 6 seconds
+    let testimonialInterval = setInterval(() => {
+      const current = document.querySelector('.testimonials__quote.is-active');
+      const nextIndex = current ? (parseInt(current.dataset.index) + 1) % testimonialQuotes.length : 0;
+      setActiveTestimonial(nextIndex);
+    }, 6000);
+
+    // Pause auto-rotate on interaction
+    testimonialBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearInterval(testimonialInterval);
+      });
+    });
+  </script>
+
+</body>
+</html>
